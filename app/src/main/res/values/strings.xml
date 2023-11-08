@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Coba_LilMile</string>
+
+    <string-array name="blood_types">
+        <item>Pilih Golongan Darah</item>
+        <item>A</item>
+        <item>B</item>
+        <item>O</item>
+        <item>AB</item>
+    </string-array>
+
+</resources>
