@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Coba_LilMile"
         tools:targetApi="31">
         <activity
+            android:name=".Homepage"
+            android:exported="false" />
+        <activity
+            android:name=".Edit_DataPertumbuhan"
+            android:exported="false" />
+        <activity
             android:name=".Tambah_DataPertumbuhan"
             android:exported="false" />
         <activity

@@ -22,15 +22,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Unggah Foto"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="Data Diri Si Kecil"
             android:textSize="18dp"
             android:textStyle="bold"/>
@@ -108,9 +101,9 @@
             android:id="@+id/etWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:hint="Berat Badan saat lahir (kg)"
-            android:inputType="numberDecimal"
-            android:layout_marginTop="16dp" />
+            android:inputType="numberDecimal" />
 
         <EditText
             android:id="@+id/etHeight"

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Edit_DataPertumbuhan">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Edit Data Diri Si Kecil"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:padding="2dp"
+      >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:layout_weight="1"
+        android:text="Berat Badan" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:text="Tinggi Badan" />
+
+  </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.123"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        >
+
+      <TextView
+          android:id="@+id/etBerat_tumbuh"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="5.5Kg"
+          android:layout_marginLeft="70dp"
+          android:layout_marginTop="5dp"
+          android:layout_marginRight="30dp"
+          android:layout_weight="1"/>
+
+      <TextView
+          android:id="@+id/etTinggi_tumbuh"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="255dp"
+          android:layout_marginTop="5dp"
+          android:layout_marginRight="20dp"
+          android:text="67cm" />
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:layout_marginLeft="325dp"
+          android:layout_marginTop="45dp"
+          android:layout_marginRight="20dp"
+          >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_edit" />
+      </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+  </LinearLayout>
+
+
+</ScrollView>
+
