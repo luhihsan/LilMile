@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="buttonColor">#C0F4FF</color>
+    <color name="colorStroke">#79747E</color> <!-- Ganti dengan warna stroke yang diinginkan -->
+    <color name="newbuttonColor">#C0F4FF</color>
 </resources>

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Coba_LilMile</string>
 
+
     <string-array name="blood_types">
         <item>Pilih Golongan Darah</item>
         <item>A</item>
@@ -8,5 +9,28 @@
         <item>O</item>
         <item>AB</item>
     </string-array>
+
+    <string name="profil">Statistics</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="fill_namalengkap">Masukkan Nama Lengkap</string>
+    <string name="email">Email</string>
+    <string name="fill_email">Masukkan Alamat Email</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="laki_laki">Laki-laki</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="dd_mm_yy">DD/MM/YY</string>
+    <string name="simpan_perubahan">Simpan Perubahan</string>
+    <string name="fill_alamat">Masukkan Alamat</string>
+    <string name="alamat">Alamat</string>
+    <string name="fill_kecamatan">Masukkan Kecamatan</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="fill_kabupaten_kota">Masukkan Kabupaten/Kota</string>
+    <string name="kabupaten_kota">Kabupaten/Kota</string>
+    <string name="fill_provinsi">Masukkan Provinsi</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="opsiDetail">Tinggi Badan (cm)</string>
+    <string name="interPret">Interpretasi: Normal</string>
+    <string name="hasilInter">Tinggi badan anak sesuai umur. Pantau ulang tinggi badan secara berkala</string>
 
 </resources>
