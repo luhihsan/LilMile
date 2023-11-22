@@ -8,11 +8,14 @@ import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.FirebaseDatabase
 import java.util.Calendar
 
 class Registrasi_anak : AppCompatActivity() {
 
     private var etDateOfBirth: EditText? = null
+    private val db by lazy { FirebaseDatabase.getInstance().reference }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,8 +94,32 @@ class Registrasi_anak : AppCompatActivity() {
         } else {
             // Semua kolom yang wajib diisi telah terisi, Anda dapat melanjutkan menyimpan data.
             // Lakukan operasi penyimpanan di sini.
+
+            // Buat objek untuk menyimpan data anak
+            val anak = DataAnak(
+                fullName = fullName,
+                dateOfBirth = dateOfBirth,
+                gender = selectedGender,
+                height = height.toDouble(), // assuming height is of type Double
+                weight = weight.toDouble(), // assuming weight is of type Double
+                headCircumference = headCircumference.toDouble(), // assuming headCircumference is of type Double
+                bloodType = selectedBloodType
+            )
+
+            // Buat child baru di "anak" dengan ID unik
+            val anakId = db.child("anak").push().key
+
+            // Simpan data anak ke database
+            if (anakId != null) {
+                db.child("anak").child(anakId).setValue(anak)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Data anak berhasil disimpan", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "Gagal menyimpan data anak", Toast.LENGTH_SHORT).show()
+                    }
+            }
         }
+
     }
-
-
 }

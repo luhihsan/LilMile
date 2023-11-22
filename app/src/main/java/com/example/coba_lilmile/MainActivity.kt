@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
                 // Logika untuk melakukan register
                 // Misalnya, menyimpan email dan password ke database Anda
-                val intent = Intent(this, Login::class.java)
+                val intent = Intent(this, Login ::class.java)
                 startActivity(intent)
             }
         }
