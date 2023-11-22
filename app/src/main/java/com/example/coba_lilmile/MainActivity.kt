@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 import java.util.UUID
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var etUsername: EditText
     private lateinit var etEmail: EditText
