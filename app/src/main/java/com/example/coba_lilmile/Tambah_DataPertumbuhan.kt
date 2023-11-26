@@ -6,37 +6,47 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import java.util.Calendar
 
 class Tambah_DataPertumbuhan : AppCompatActivity() {
 
+    private lateinit var etTgl_tumbuh: EditText
+    private lateinit var databaseReference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah_data_pertumbuhan)
+
+        etTgl_tumbuh = findViewById(R.id.etTgl_tumbuh)
+        etTgl_tumbuh.setOnClickListener {
+            showDatePicker()
+        }
+
+        databaseReference = FirebaseDatabase.getInstance().reference
     }
 
-    private var etTgl_tumbuh: EditText? = null
-    fun showDatePicker(view: View?) {
+    private fun showDatePicker() {
         val year: Int
         val month: Int
         val day: Int
-        // Tentukan tanggal awal yang ingin ditampilkan dalam DatePickerDialog
-        // Misalnya, di sini kita menampilkan tanggal hari ini.
         val calendar: Calendar = Calendar.getInstance()
         year = calendar.get(Calendar.YEAR)
         month = calendar.get(Calendar.MONTH)
         day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        // Buat DatePickerDialog
-        val datePickerDialog = DatePickerDialog(this,
-            { datePicker, year, month, day -> // Handle tanggal yang dipilih oleh pengguna
-                val selectedDate = year.toString() + "-" + (month + 1) + "-" + day
-                etTgl_tumbuh?.setText(selectedDate)
-            }, year, month, day
+        val datePickerDialog = DatePickerDialog(
+            this,
+            { _, year, month, day ->
+                val selectedDate = "$year-${month + 1}-$day"
+                etTgl_tumbuh.setText(selectedDate)
+            },
+            year,
+            month,
+            day
         )
 
-        // Tampilkan DatePickerDialog
         datePickerDialog.show()
     }
 
@@ -51,7 +61,6 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
         val berat = etBerat.text.toString().toDoubleOrNull() ?: 0.0
         val tinggi = etTinggi.text.toString().toDoubleOrNull() ?: 0.0
 
-
         if (tanggal.isEmpty() || umur == 0 || berat == 0.0 || tinggi == 0.0) {
             Toast.makeText(this, "Harap isi semua kolom yang wajib diisi.", Toast.LENGTH_SHORT).show()
 
@@ -65,14 +74,26 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
                 etTinggi.requestFocus()
             }
         } else {
+            // Create DataUpdatePertumbuhan object
+            val dataPertumbuhan = DataUpdatePertumbuhan(
+                tgl_tumbuh = tanggal,
+                umur_tumbuh = umur.toString(),
+                tinggi_tumbuh = tinggi,
+                berat_tumbuh = berat
+            )
 
-
-            // Selanjutnya, Anda dapat menyimpan data ini ke penyimpanan atau melakukan operasi lain yang diperlukan.
-            // Contohnya: Simpan ke database atau penyimpanan lokal.
+            // Save the data to the database
+            val key = databaseReference.child("pertumbuhan_anak").push().key
+            if (key != null) {
+                databaseReference.child("pertumbuhan_anak").child(key).setValue(dataPertumbuhan)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Data pertumbuhan disimpan.", Toast.LENGTH_SHORT).show()
+                        // Continue with other operations after successful save
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "Gagal menyimpan data pertumbuhan.", Toast.LENGTH_SHORT).show()
+                    }
+            }
         }
     }
-
-
-
-
 }
