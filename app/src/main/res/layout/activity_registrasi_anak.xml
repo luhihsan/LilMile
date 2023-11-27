@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,131 +13,159 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/ivProfilePicture"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_gravity="center_horizontal"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="20dp"
-            android:text="Data Diri Si Kecil"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:text="Nama Lengkap" />
-
-        <EditText
-            android:id="@+id/etFullName"
+        <!-- CardView for "Data Diri Si Kecil" -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Lengkap"
-            android:inputType="textPersonName"
-            android:layout_marginTop="16dp" />
+            android:layout_marginBottom="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:text="Tanggal Lahir" />
-
-        <EditText
-            android:id="@+id/etDateOfBirth"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tanggal Lahir"
-            android:layout_marginTop="16dp"
-            android:clickable="true"
-            android:focusable="false"
-            android:onClick="showDatePicker" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:text="Jenis Kelamin" />
-
-        <RadioGroup
-            android:id="@+id/rgGender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp">
-
-            <RadioButton
-                android:id="@+id/rbMale"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Laki-laki" />
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <RadioButton
-                android:id="@+id/rbFemale"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/ivProfilePicture"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="20dp"
+                    android:text="Data Diri Si Kecil"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="Nama Lengkap" />
+
+                <EditText
+                    android:id="@+id/etFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nama Lengkap"
+                    android:inputType="textPersonName"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="Tanggal Lahir" />
+
+                <EditText
+                    android:id="@+id/etDateOfBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal Lahir"
+                    android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:onClick="showDatePicker" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="Jenis Kelamin" />
+
+                <RadioGroup
+                    android:id="@+id/rgGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/rbMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Laki-laki" />
+
+                    <RadioButton
+                        android:id="@+id/rbFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Perempuan" />
+
+                </RadioGroup>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView for "Data Kelahiran" -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Perempuan" />
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        </RadioGroup>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="Data Kelahiran"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:text="Data Kelahiran"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/etWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Berat Badan saat lahir (kg)"
+                    android:inputType="numberDecimal" />
 
-        <EditText
-            android:id="@+id/etWeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Berat Badan saat lahir (kg)"
-            android:inputType="numberDecimal" />
+                <EditText
+                    android:id="@+id/etHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Tinggi Badan saat lahir (cm)"
+                    android:inputType="numberDecimal" />
 
-        <EditText
-            android:id="@+id/etHeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Tinggi Badan saat lahir (cm)"
-            android:inputType="numberDecimal"
-            />
+                <EditText
+                    android:id="@+id/etHeadCircumference"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lingkar Kepala saat lahir (cm)"
+                    android:inputType="numberDecimal"
+                    android:layout_marginTop="16dp" />
 
-        <EditText
-            android:id="@+id/etHeadCircumference"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Lingkar Kepala saat lahir (cm)"
-            android:inputType="numberDecimal"
-            android:layout_marginTop="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="Golongan Darah" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:text="Golongan Darah" />
+                <Spinner
+                    android:id="@+id/spAdditionalProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/blood_types"
+                    android:layout_marginTop="16dp"
+                    android:padding="12dp"
+                    />
 
-        <Spinner
-            android:id="@+id/spAdditionalProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/blood_types"
-            android:layout_marginTop="16dp"
-            android:padding="12dp"
-            />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:layout_width="match_parent"
@@ -147,5 +176,4 @@
 
     </LinearLayout>
 
-
-</ScrollView >
+</ScrollView>
