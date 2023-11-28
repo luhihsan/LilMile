@@ -5,4 +5,5 @@
     <color name="buttonColor">#C0F4FF</color>
     <color name="colorStroke">#79747E</color> <!-- Ganti dengan warna stroke yang diinginkan -->
     <color name="newbuttonColor">#C0F4FF</color>
+    <color name="mainBlue">#A2E7F5</color>
 </resources>
