@@ -13,7 +13,7 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
-        android:layout_height="103dp"
+        android:layout_height="105dp"
         android:background="@color/mainBlue"
         android:gravity="center"
         android:shadowColor="@color/buttonColor"
@@ -30,7 +30,7 @@
         android:padding="30dp">
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/logoApp"
             android:layout_width="match_parent"
             android:layout_height="196dp"
             android:layout_marginTop="35dp"
@@ -76,13 +76,15 @@
             app:cornerRadius="8dp"
             app:rippleColor="#A2E7F5" />
 
-        <TextView
-            android:id="@+id/tvSignIn"
+        <Button
+            android:id="@+id/btnPindahRegis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
             android:text="Belum memiliki akun ? Daftar"
+            android:textColor="@color/black"
             android:textSize="16sp" />
     </LinearLayout>
 

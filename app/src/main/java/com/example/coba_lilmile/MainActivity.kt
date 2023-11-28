@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnSubmit: Button
+    private lateinit var btnPindahLogin: Button
 
     private val db by lazy { FirebaseDatabase.getInstance().reference }
 
@@ -28,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         btnSubmit = findViewById(R.id.btnRegistrasi)
+        btnPindahLogin = findViewById(R.id.btnPindahLogin)
+
 
         btnSubmit.setOnClickListener {
             val username = etUsername.text.toString()
@@ -45,6 +48,11 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, Tambah_DataPertumbuhan ::class.java)
                 startActivity(intent)
             }
+        }
+
+        btnPindahLogin.setOnClickListener{
+            val intent = Intent(this, Login ::class.java)
+            startActivity(intent)
         }
     }
 
