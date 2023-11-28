@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.util.Calendar
+import java.util.UUID
 
 class Tambah_DataPertumbuhan : AppCompatActivity() {
 
@@ -75,8 +76,12 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
                 etTinggi.requestFocus()
             }
         } else {
+            // Create a unique ID for each data entry
+            val uid = UUID.randomUUID().toString()
+
             // Create DataUpdatePertumbuhan object
             val dataPertumbuhan = DataUpdatePertumbuhan(
+                id = uid,
                 tgl_tumbuh = tanggal,
                 umur_tumbuh = umur.toString(),
                 tinggi_tumbuh = tinggi,
@@ -86,7 +91,7 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
             // Save the data to the database
             val key = databaseReference.child("pertumbuhan_anak").push().key
             if (key != null) {
-                databaseReference.child("pertumbuhan_anak").child(key).setValue(dataPertumbuhan)
+                databaseReference.child("pertumbuhan_anak").child(uid).setValue(dataPertumbuhan)
                     .addOnSuccessListener {
                         Toast.makeText(this, "Data pertumbuhan disimpan.", Toast.LENGTH_SHORT).show()
                         // Continue with other operations after successful save

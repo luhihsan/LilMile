@@ -106,7 +106,7 @@ class Login : AppCompatActivity() {
                                 preference.setValues("poin", user.poin.toString())
                                 preference.setValues("status", "1")*/
 
-                                var goHome = Intent(this@Login, Homepage::class.java)
+                                var goHome = Intent(this@Login, Tambah_DataPertumbuhan::class.java)
                                 startActivity(goHome)
                                 finishAffinity()
                             } else {

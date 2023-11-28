@@ -3,6 +3,7 @@ package com.example.coba_lilmile
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,7 +22,7 @@ class Edit_DataPertumbuhan : AppCompatActivity(), OnItemClicked {
 
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
-
+    private val db by lazy { RealtimeDatabase.instance()}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_data_pertumbuhan)
@@ -35,16 +36,11 @@ class Edit_DataPertumbuhan : AppCompatActivity(), OnItemClicked {
         rvReadPertumbuhan.layoutManager = LinearLayoutManager(this)
         rvReadPertumbuhan.adapter = adptPertumbuhan
 
-        // TODO: Set up other views and functionality if needed
-
         // Load data from Firebase
         loadDataFromFirebase()
     }
 
-
     private fun loadDataFromFirebase() {
-
-
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 listPertumbuhan.clear()
@@ -55,14 +51,11 @@ class Edit_DataPertumbuhan : AppCompatActivity(), OnItemClicked {
                             listPertumbuhan.add(dataPertumbuhan)
                         }
                     }
-
                     adptPertumbuhan.notifyDataSetChanged()
                 }
-
             }
 
             override fun onCancelled(error: DatabaseError) {
-
                 Log.e("DB ERROR", error.message)
                 Toast.makeText(
                     this@Edit_DataPertumbuhan,
@@ -72,39 +65,6 @@ class Edit_DataPertumbuhan : AppCompatActivity(), OnItemClicked {
             }
         })
     }
-
-    // Read data from Firebase
-    /*private fun loadDataFromFirebase() {
-
-
-        val databaseReference = RealtimeDatabase.instance().getReference("pertumbuhan_anak")
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-
-                listPertumbuhan.clear()
-
-                for (postSnapshot in snapshot.children) {
-                    val dataPertumbuhan = postSnapshot.getValue(DataUpdatePertumbuhan::class.java)
-                    if (dataPertumbuhan != null) {
-                        listPertumbuhan.add(dataPertumbuhan)
-                    }
-                }
-
-                adptPertumbuhan.notifyDataSetChanged()
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-
-                Log.e("DB ERROR", error.message)
-                Toast.makeText(
-                    this@Edit_DataPertumbuhan,
-                    "Error: ${error.message}",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        })
-    }*/
-
 
 
     override fun editClicked(data: DataUpdatePertumbuhan) {
@@ -112,6 +72,19 @@ class Edit_DataPertumbuhan : AppCompatActivity(), OnItemClicked {
     }
 
     override fun deleteClicked(data: DataUpdatePertumbuhan) {
-        // Implement delete action if needed
+        // Use a unique identifier (e.g., tgl_tumbuh) as the key for deletion
+        val key = data.id
+        if (key != null) {
+//            databaseReference.child(key).removeValue().addOnSuccessListener {
+                db.getReference("pertumbuhan_anak").child(key).removeValue().addOnSuccessListener {
+                Toast.makeText(this, "Data berhasil dihapus", Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener {
+                Toast.makeText(this, "Data gagal dihapus", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(this, "ID is null, cannot delete data", Toast.LENGTH_SHORT).show()
+        }
     }
+
+
 }
