@@ -1,6 +1,7 @@
 package com.example.coba_lilmile
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -89,6 +90,9 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
                     .addOnSuccessListener {
                         Toast.makeText(this, "Data pertumbuhan disimpan.", Toast.LENGTH_SHORT).show()
                         // Continue with other operations after successful save
+
+                        val intent = Intent(this@Tambah_DataPertumbuhan, Edit_DataPertumbuhan::class.java)
+                        startActivity(intent)
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, "Gagal menyimpan data pertumbuhan.", Toast.LENGTH_SHORT).show()

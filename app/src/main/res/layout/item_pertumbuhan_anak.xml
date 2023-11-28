@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp"
+    android:gravity="center_vertical">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvTgl_tumbuh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tvUsia_tumbuh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"/>
+
+
+        <TextView
+            android:id="@+id/tvBerat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"/>
+
+
+        <TextView
+            android:id="@+id/tvTinggi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/bEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:src="@drawable/ic_edit"
+        android:background="@android:color/transparent"
+        android:contentDescription="Edit"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/bDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:src="@drawable/ic_delete"
+        android:background="@android:color/transparent"
+        android:contentDescription="Delete"/>
+
+
+</LinearLayout>

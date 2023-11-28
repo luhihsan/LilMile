@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data Pertumbuhan Anak"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/etEditBerat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Berat Badan"
+        android:textSize="20sp"
+        android:inputType="textPersonName|textCapWords"
+        android:layout_marginTop="10dp"/>
+
+
+    <EditText
+        android:id="@+id/etEditTinggi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tinggi baru"
+        android:textSize="20sp"
+        android:maxLength="8"
+        android:inputType="number"
+        android:layout_marginTop="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+
+        <Button
+            android:id="@+id/bEditCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="30dp"/>
+
+
+        <Button
+            android:id="@+id/bEditOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="30dp"/>
+
+
+    </LinearLayout>
+</LinearLayout>
