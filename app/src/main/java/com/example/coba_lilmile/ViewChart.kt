@@ -1,18 +1,12 @@
 package com.example.coba_lilmile
 
-import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.Data
-import android.renderscript.Sampler.Value
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.anychart.AnyChart
 import com.anychart.AnyChartView
 import com.anychart.chart.common.dataentry.DataEntry
 import com.anychart.chart.common.dataentry.ValueDataEntry
-import com.anychart.charts.Cartesian
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -46,11 +40,13 @@ class ViewChart : AppCompatActivity(){
         // Menambahkan konfigurasi grid ke chart
         lineChart.xGrid(true)
         lineChart.yGrid(true)
+        var seriesData: List<DataEntry> = listOf()
 
-        databaseReference.orderByChild("tgl_tumbuh").equalTo("1").addValueEventListener(object : ValueEventListener{
+        databaseReference.orderByChild("tgl_tumbuh").addValueEventListener(object : ValueEventListener{
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if(dataSnapshot.exists()){
                     for (userSnapshot in dataSnapshot.children){
+                        val jumlahData: Long = dataSnapshot.childrenCount
                         val dataAnak = userSnapshot.getValue(isiDataAnak::class.java)
                         if (dataAnak == null) {
                             Toast.makeText(
@@ -58,41 +54,29 @@ class ViewChart : AppCompatActivity(){
                                 Toast.LENGTH_LONG
                             ).show()
                         } else {
-                            Toast.makeText(
-                                this@ViewChart, "Data ditemukan",
+                            /*Toast.makeText(
+                                this@ViewChart, "Data ditemukan, jumlah: $jumlahData",
                                 Toast.LENGTH_LONG
-                            ).show()
-                            val tb1 = ValueDataEntry("3",4.5)
-                            val tb2 = ValueDataEntry("8", 7.5)
-                            val tb3 = ValueDataEntry("12", 8)
-                            val tb4 = ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.tinggi_tumbuh)
-                            val tb5 = ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.tinggi_tumbuh)
-                            val data: List<DataEntry> = listOf(
-                                tb1, tb2, tb3, tb4, tb5
-                            )
+                            ).show()*/
 
-                            //        // Inisialisasi Area Range Chart
-                            //        val areaRangeChart: Cartesian = AnyChart.area()
-                            //
-                            //
-                            //        // Menambahkan data ke chart
-                            //        val dataArea1: List<ValueDataEntry> = listOf(
-                            //            ValueDataEntry("A", 10, 20),
-                            //            ValueDataEntry("B", 15, 25)
-                            //        // ... tambahkan data range lainnya
-                            //        )
-                            //
-                            //        areaRangeChart.rangeArea(dataArea1)
+                            seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.tinggi_tumbuh)
 
-                            // Menetapkan data ke chart
-                            lineChart.data(data)
 
-                            // Menambahkan chart ke AnyChartView
-                            anyChartView.setChart(lineChart)
                         }
                     }
                 }
 
+
+                // Menetapkan data ke chart
+                lineChart.data(seriesData)
+
+                // Menambahkan chart ke AnyChartView
+                anyChartView.setChart(lineChart)
+
+                Toast.makeText(
+                    this@ViewChart, "Data berhasil ditemukan",
+                    Toast.LENGTH_LONG
+                ).show()
 
 
             }
@@ -104,8 +88,6 @@ class ViewChart : AppCompatActivity(){
                 ).show()
             }
         })
-        // Menambahkan data ke chart
-
 
 
     }

@@ -19,7 +19,12 @@
             android:exported="false" />
         <activity
             android:name=".Edit_DataPertumbuhan"
-            android:exported="false" />
+            android:exported="true">
+
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Tambah_DataPertumbuhan"
             android:exported="false" />

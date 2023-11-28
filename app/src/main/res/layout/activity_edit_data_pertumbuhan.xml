@@ -26,9 +26,10 @@
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/rvRead_Pertumbuhan"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="620dp"
+      android:textSize="5sp"
       tools:itemCount="4"
-      tools:listitem="@layout/item_pertumbuhan_anak"/>
+      tools:listitem="@layout/item_pertumbuhan_anak" />
 
 
 
