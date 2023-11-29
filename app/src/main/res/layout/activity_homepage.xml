@@ -176,6 +176,14 @@
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
+            <Button
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#A2E7F5"
+                android:text="Update Pertumbuhan Anak"
+                android:textColor="#ffffff"
+                android:onClick="feditPertumbuhan"/>
+
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
