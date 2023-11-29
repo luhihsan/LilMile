@@ -33,4 +33,8 @@
     <string name="interPret">Interpretasi: Normal</string>
     <string name="hasilInter">Tinggi badan anak sesuai umur. Pantau ulang tinggi badan secara berkala</string>
 
+
+    <string name="judulChart">Tinggi Badan</string>
+
+
 </resources>
