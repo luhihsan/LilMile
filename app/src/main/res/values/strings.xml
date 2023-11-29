@@ -30,8 +30,13 @@
     <string name="fill_provinsi">Masukkan Provinsi</string>
     <string name="provinsi">Provinsi</string>
     <string name="opsiDetail">Tinggi Badan (cm)</string>
-    <string name="interPret">Interpretasi: Normal</string>
+    <string name="interPret">Interpretasi: </string>
+    <string name="hasilInterpret">-</string>
     <string name="hasilInter">Tinggi badan anak sesuai umur. Pantau ulang tinggi badan secara berkala</string>
+    <string name="greetingUser"> User!</string>
+
+    <string name="namaAnak">Fatih</string>
+    <string name="umurANak">0 Tahun 9 Bulan</string>
 
 
     <string name="judulChart">Tinggi Badan</string>
