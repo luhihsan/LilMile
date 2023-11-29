@@ -1,4 +1,4 @@
-package com.example.coba_lilmile
+package com.example.coba_lilmile.util
 
 import java.util.UUID
 

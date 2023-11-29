@@ -2,13 +2,13 @@ package com.example.coba_lilmile
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.coba_lilmile.util.DataPengguna
+import com.example.coba_lilmile.util.PreferenceHelper
 import com.google.firebase.database.*
-import java.util.prefs.Preferences
 
 class Login : AppCompatActivity() {
     private lateinit var etEmail: EditText
@@ -21,11 +21,13 @@ class Login : AppCompatActivity() {
     // Dalam kelas MainActivity
     /*val db by lazy { FirebaseDatabase.getInstance().reference }*/
 
-    lateinit var preference: Preferences
+    lateinit var preference: PreferenceHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        preference = PreferenceHelper(this)
 
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
@@ -98,20 +100,18 @@ class Login : AppCompatActivity() {
                                     Toast.LENGTH_LONG
                                 ).show()
 
-                                /*preference.setValues("nama", user.nama.toString())
+                                preference.setValues("id", user.id.toString())
                                 preference.setValues("username", user.username.toString())
                                 preference.setValues("email", user.email.toString())
                                 preference.setValues("password", user.password.toString())
-                                preference.setValues("noHp", user.noHp.toString())
-                                preference.setValues("poin", user.poin.toString())
-                                preference.setValues("status", "1")*/
+                                preference.setValues("status", "1")
 
                                 var goHome = Intent(this@Login, Homepage ::class.java)
                                 startActivity(goHome)
                                 finishAffinity()
                             } else {
                                 Toast.makeText(
-                                    this@Login, "pw mu salah tol, iki sek bener: ${user.password}",
+                                    this@Login, "Password salah!",
                                     Toast.LENGTH_LONG
                                 ).show()
                             }
