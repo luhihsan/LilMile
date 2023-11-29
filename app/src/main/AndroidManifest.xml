@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,22 +15,31 @@
         android:theme="@style/Theme.Coba_LilMile"
         tools:targetApi="31">
         <activity
+            android:name=".welcome_page"
+            android:exported="false" />
+        <activity
             android:name=".Homepage"
             android:exported="false" />
         <activity
             android:name=".Edit_DataPertumbuhan"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Tambah_DataPertumbuhan"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Login"
-            android:exported="false">
-
-        </activity>
-        <activity android:name=".ViewChart"
+            android:exported="false"></activity>
+        <activity
+            android:name=".ViewChart"
             android:exported="true">
-
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
