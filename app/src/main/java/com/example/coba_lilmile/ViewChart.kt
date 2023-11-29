@@ -12,6 +12,7 @@ import com.anychart.core.cartesian.series.Area
 import com.anychart.core.cartesian.series.Line
 import com.anychart.data.Set
 import com.anychart.enums.MarkerType
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -29,6 +30,8 @@ class ViewChart : AppCompatActivity(){
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
 
+    private lateinit var buttonTambah : FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_chart)
@@ -36,6 +39,8 @@ class ViewChart : AppCompatActivity(){
 
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.reference.child("pertumbuhan_anak")
+
+        buttonTambah = findViewById(R.id.btnTambahData)
 
         // Inisialisasi AnyChartView
         val anyChartView = findViewById<AnyChartView>(R.id.lineChart)
@@ -64,6 +69,22 @@ class ViewChart : AppCompatActivity(){
         benchmarkData += CustomDataEntry("7", 73.49, 64.79)
         benchmarkData += CustomDataEntry("8", 74.99, 66.19)
         benchmarkData += CustomDataEntry("9", 76.49, 67.49)
+        benchmarkData += CustomDataEntry("10", 77.89, 68.69)
+        benchmarkData += CustomDataEntry("11", 79.19, 69.89)
+        benchmarkData += CustomDataEntry("12", 80.49, 70.99)
+        benchmarkData += CustomDataEntry("13", 81.79, 72.09)
+        benchmarkData += CustomDataEntry("14", 82.99, 73.09)
+        benchmarkData += CustomDataEntry("15", 84.19, 74.09)
+        benchmarkData += CustomDataEntry("16", 85.39, 74.99)
+        benchmarkData += CustomDataEntry("17", 86.49, 75.99)
+        benchmarkData += CustomDataEntry("18", 87.69, 76.89)
+        benchmarkData += CustomDataEntry("19", 88.79, 77.69)
+        benchmarkData += CustomDataEntry("20", 89.79, 78.59)
+        benchmarkData += CustomDataEntry("21", 90.89, 79.39)
+        benchmarkData += CustomDataEntry("22", 91.89, 80.19)
+        benchmarkData += CustomDataEntry("23", 92.89, 80.99)
+        benchmarkData += CustomDataEntry("24", 93.89, 81.69)
+
 
         val set = Set.instantiate()
         set.data(benchmarkData)

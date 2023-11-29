@@ -106,7 +106,7 @@ class Login : AppCompatActivity() {
                                 preference.setValues("password", user.password.toString())
                                 preference.setValues("status", "1")
 
-                                var goHome = Intent(this@Login, Homepage ::class.java)
+                                var goHome = Intent(this@Login, HomeActivity::class.java)
                                 startActivity(goHome)
                                 finishAffinity()
                             } else {

@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.coba_lilmile.util.PreferenceHelper
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.util.Calendar
@@ -16,15 +17,19 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
 
     private lateinit var etTgl_tumbuh: EditText
     private lateinit var databaseReference: DatabaseReference
+    private lateinit var preference: PreferenceHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah_data_pertumbuhan)
 
+        preference = PreferenceHelper(this)
         etTgl_tumbuh = findViewById(R.id.etTgl_tumbuh)
         etTgl_tumbuh.setOnClickListener {
             showDatePicker()
         }
+
+
 
         databaseReference = FirebaseDatabase.getInstance().reference
     }
@@ -63,6 +68,8 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
         val berat = etBerat.text.toString().toDoubleOrNull() ?: 0.0
         val tinggi = etTinggi.text.toString().toDoubleOrNull() ?: 0.0
 
+        val id_akun = preference.getValues("id")
+
         if (tanggal.isEmpty() || umur == 0 || berat == 0.0 || tinggi == 0.0) {
             Toast.makeText(this, "Harap isi semua kolom yang wajib diisi.", Toast.LENGTH_SHORT).show()
 
@@ -82,6 +89,7 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
             // Create DataUpdatePertumbuhan object
             val dataPertumbuhan = DataUpdatePertumbuhan(
                 id = uid,
+                idAkun = id_akun,
                 tgl_tumbuh = tanggal,
                 umur_tumbuh = umur.toString(),
                 tinggi_tumbuh = tinggi,
