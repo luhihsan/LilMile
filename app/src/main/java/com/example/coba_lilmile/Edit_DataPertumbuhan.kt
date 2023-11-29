@@ -68,7 +68,7 @@ class Edit_DataPertumbuhan : AppCompatActivity(), OnItemClicked {
 
 
     override fun editClicked(data: DataUpdatePertumbuhan) {
-        // Implement edit action if needed
+        showEditDialog(this, data, db)
     }
 
     override fun deleteClicked(data: DataUpdatePertumbuhan) {

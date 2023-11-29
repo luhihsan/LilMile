@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -26,6 +25,8 @@
                 android:orientation="horizontal">
 
                 <!-- Bagian Kiri -->
+
+                <!-- Bagian Kanan -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -42,16 +43,16 @@
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
                         android:text="Tanggal Pertumbuhan"
-                        android:textSize="16sp"
-                        android:textColor="#000"/>
+                        android:textColor="#000"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/tvTgl_tumbuh"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:textSize="20sp"
-                        android:textColor="#000"/>
+                        android:textColor="#000"
+                        android:textSize="20sp" />
 
                     <!-- Usia -->
                     <TextView
@@ -60,16 +61,16 @@
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
                         android:text="Usia"
-                        android:textSize="16sp"
-                        android:textColor="#000"/>
+                        android:textColor="#000"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/tvUsia_tumbuh"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:textSize="20sp"
-                        android:textColor="#000"/>
+                        android:textColor="#000"
+                        android:textSize="20sp" />
 
                     <!-- Berat Badan -->
                     <TextView
@@ -78,16 +79,16 @@
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
                         android:text="Berat Badan"
-                        android:textSize="16sp"
-                        android:textColor="#000"/>
+                        android:textColor="#000"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/tvBerat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:textSize="20sp"
-                        android:textColor="#000"/>
+                        android:textColor="#000"
+                        android:textSize="20sp" />
 
                     <!-- Tinggi Badan -->
                     <TextView
@@ -96,19 +97,18 @@
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
                         android:text="Tinggi Badan"
-                        android:textSize="16sp"
-                        android:textColor="#000"/>
+                        android:textColor="#000"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/tvTinggi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:textSize="20sp"
-                        android:textColor="#000"/>
+                        android:textColor="#000"
+                        android:textSize="20sp" />
                 </LinearLayout>
 
-                <!-- Bagian Kanan -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
