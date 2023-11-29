@@ -96,7 +96,7 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
                         Toast.makeText(this, "Data pertumbuhan disimpan.", Toast.LENGTH_SHORT).show()
                         // Continue with other operations after successful save
 
-                        val intent = Intent(this@Tambah_DataPertumbuhan, Edit_DataPertumbuhan::class.java)
+                        val intent = Intent(this@Tambah_DataPertumbuhan, Homepage::class.java)
                         startActivity(intent)
                     }
                     .addOnFailureListener {

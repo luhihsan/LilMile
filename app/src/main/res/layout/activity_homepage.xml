@@ -176,6 +176,13 @@
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="Update Pertumbuhan Anak"
+                android:layout_margin="16dp"
+                android:onClick="feditPertumbuhan"/>
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
@@ -384,7 +391,6 @@
                         android:src="@drawable/carousel2" />
                 </LinearLayout>
             </HorizontalScrollView>
-
         </LinearLayout>
     </LinearLayout>
 
@@ -398,7 +404,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
 
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/bottom_navigation_menu" />

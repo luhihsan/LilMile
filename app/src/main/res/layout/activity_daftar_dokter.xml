@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="MainActivity">
+    tools:context=".DaftarDokter">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -139,8 +139,8 @@
                                 android:layout_marginRight="10dp"
                                 android:layout_marginBottom="5dp"
                                 android:backgroundTint="#4287f5"
-                                android:text="Reservasi"
-                                android:onClick="fpindah"/>
+                                android:onClick="fpindah"
+                                android:text="Reservasi" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
 

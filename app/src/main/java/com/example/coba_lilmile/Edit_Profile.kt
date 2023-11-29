@@ -5,19 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class Profile : AppCompatActivity() {
+class Edit_Profile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-    }
-
-    fun fEditProfile(view: View) {
-        val intent = Intent(this, Edit_Profile::class.java)
-        startActivity(intent)
-    }
-
-    fun fAlamat(view: View) {
-        val intent = Intent(this, Tambah_Alamat::class.java)
-        startActivity(intent)
     }
 }

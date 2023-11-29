@@ -1,6 +1,7 @@
 package com.example.coba_lilmile
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -118,6 +119,9 @@ class Registrasi_anak : AppCompatActivity() {
                     .addOnFailureListener {
                         Toast.makeText(this, "Gagal menyimpan data anak", Toast.LENGTH_SHORT).show()
                     }
+
+                val intent = Intent(this, Tambah_DataPertumbuhan ::class.java)
+                startActivity(intent)
             }
         }
 

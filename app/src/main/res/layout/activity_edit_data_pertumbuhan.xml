@@ -7,12 +7,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Edit_DataPertumbuhan"
     android:layout_marginHorizontal="15dp"
     android:layout_marginTop="15dp"
     android:orientation="vertical">
-
-
 
   <TextView
       android:layout_width="match_parent"
@@ -22,7 +20,6 @@
       android:textStyle="bold"
       android:layout_marginTop="10dp"/>
 
-
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/rvRead_Pertumbuhan"
       android:layout_width="match_parent"
@@ -30,7 +27,5 @@
       android:textSize="5sp"
       tools:itemCount="4"
       tools:listitem="@layout/item_pertumbuhan_anak" />
-
-
 
 </LinearLayout>

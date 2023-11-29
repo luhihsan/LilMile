@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Edit_Profile">
+    tools:context=".Tambah_Alamat">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Profil Anak"
+                    android:text="Alamat"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -45,141 +45,91 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/ava"
-                    android:layout_width="129dp"
-                    android:layout_height="93dp"
-                    android:layout_marginTop="30dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ava"
-                    tools:ignore="ImageContrastCheck" />
-
                 <TextView
-                    android:id="@+id/txtNamaLengkap"
+                    android:id="@+id/txtProvinsi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"
                     android:layout_marginTop="1dp"
-                    android:text="@string/nama_lengkap"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ava" />
+                    android:text="Provinsi"
+                    app:layout_constraintStart_toStartOf="parent"/>
 
                 <EditText
-                    android:id="@+id/edtfullName"
+                    android:id="@+id/edtProvinsi"
                     android:layout_width="343dp"
                     android:layout_height="56dp"
                     android:layout_marginTop="5dp"
-                    android:hint="@string/fill_namalengkap"
+                    android:hint="Masukkan Provinsi"
                     android:paddingStart="10dp"
                     android:paddingEnd="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtNamaLengkap" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtProvinsi" />
 
                 <TextView
-                    android:id="@+id/txtEmail"
+                    android:id="@+id/txtKota"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/email"
+                    android:text="Kabupaten/Kota"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edtfullName" />
+                    app:layout_constraintTop_toBottomOf="@+id/edtProvinsi" />
 
                 <EditText
-                    android:id="@+id/edtEmail"
+                    android:id="@+id/edtKota"
                     android:layout_width="343dp"
                     android:layout_height="56dp"
                     android:layout_marginTop="1dp"
-                    android:hint="@string/fill_email"
+                    android:hint="Masukkan Kabupaten/Kota"
                     android:paddingStart="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtKota" />
 
                 <TextView
-                    android:id="@+id/txtJenisKelamin"
+                    android:id="@+id/txtKecamatan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/jenis_kelamin"
+                    android:text="Kecamatan"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.148"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
-
-                <RadioGroup
-                    android:id="@+id/radioGroupGender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:paddingStart="45dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtJenisKelamin">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/radioButtonLK"
-                            android:layout_width="0dp"
-                            android:layout_height="48dp"
-                            android:layout_weight="1"
-                            android:text="@string/laki_laki" />
-
-                        <RadioButton
-                            android:id="@+id/radioButtonPR"
-                            android:layout_width="0dp"
-                            android:layout_height="48dp"
-                            android:layout_weight="1"
-                            android:text="@string/perempuan" />
-
-                    </LinearLayout>
-
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/txtTanggalLahir"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/tanggal_lahir"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/radioGroupGender" />
+                    app:layout_constraintTop_toBottomOf="@+id/edtKota"/>
 
                 <EditText
-                    android:id="@+id/edtTanggal"
+                    android:id="@+id/edtKecamatan"
                     android:layout_width="343dp"
                     android:layout_height="56dp"
                     android:layout_marginTop="1dp"
-                    android:clickable="false"
-                    android:focusable="false"
-                    android:hint="@string/dd_mm_yy"
+                    android:hint="Masukkan Kecamatan"
                     android:paddingStart="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtTanggalLahir" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtKecamatan" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonTanggal"
+                <TextView
+                    android:id="@+id/txtAlamat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:onClick="fSetTanggal"
-                    app:layout_constraintEnd_toEndOf="@+id/edtTanggal"
-                    app:layout_constraintHorizontal_bias="0.959"
-                    app:layout_constraintStart_toStartOf="@+id/edtTanggal"
-                    app:layout_constraintTop_toTopOf="@+id/edtTanggal"
-                    app:srcCompat="@drawable/calendar_icon"
-                    tools:ignore="MissingConstraints" />
+                    android:layout_marginTop="8dp"
+                    android:text="Kecamatan"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.148"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtKecamatan" />
 
+                <EditText
+                    android:id="@+id/edtAlamat"
+                    android:layout_width="343dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="1dp"
+                    android:hint="Masukkan Kecamatan"
+                    android:paddingStart="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAlamat" />
                 <Button
                     android:id="@+id/buttonSave"
                     android:layout_width="300dp"
@@ -190,7 +140,7 @@
                     android:text="@string/simpan_perubahan"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButtonTanggal" />
+                    app:layout_constraintTop_toBottomOf="@+id/edtAlamat" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
