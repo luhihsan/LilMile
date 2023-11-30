@@ -1,6 +1,11 @@
 package com.example.coba_lilmile
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.anychart.AnyChart
@@ -26,21 +31,55 @@ class ViewChart : AppCompatActivity(){
     val db by lazy { FirebaseDatabase.getInstance() }
 
 
+    private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim)}
+    private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_close_anim)}
+    private val fromBottom: Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.from_bottom_anim)}
+    private val toBottom: Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim)}
 
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
 
-    private lateinit var buttonTambah : FloatingActionButton
+    private lateinit var btnMenu : FloatingActionButton
+    private lateinit var btnAdd : FloatingActionButton
+    private lateinit var btnHistory : FloatingActionButton
+
+
+
+    private lateinit var titleStatistic: TextView
+
+    private var clicked = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_chart)
 
+        val bundle = intent.extras
+        val viewTinggiBadan = bundle!!.getBoolean("viewTinggiBadan")
+        val viewBeratBadan = bundle!!.getBoolean("viewBeratBadan")
+        val viewLingkarKepala = bundle!!.getBoolean("viewLingkarKepala")
+
+
+        btnMenu = findViewById(R.id.btnMenu)
+        btnAdd = findViewById(R.id.btnTambahData)
+        btnHistory = findViewById(R.id.btnHistory)
+
+        btnMenu.setOnClickListener{
+            onAddButtonClicked()
+        }
+        btnAdd.setOnClickListener{
+            tambahData()
+        }
+        btnHistory.setOnClickListener{
+            historyData()
+        }
+
 
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.reference.child("pertumbuhan_anak")
 
-        buttonTambah = findViewById(R.id.btnTambahData)
+
+        titleStatistic = findViewById(R.id.titleStat)
 
         // Inisialisasi AnyChartView
         val anyChartView = findViewById<AnyChartView>(R.id.lineChart)
@@ -59,31 +98,68 @@ class ViewChart : AppCompatActivity(){
         var benchmarkData: List<DataEntry> = ArrayList()
         var seriesData: List<DataEntry> = listOf()
 
-        benchmarkData += CustomDataEntry("0", 53.69, 46.09)
-        benchmarkData += CustomDataEntry("1", 58.59, 50.79)
-        benchmarkData += CustomDataEntry("2", 62.39, 54.39)
-        benchmarkData += CustomDataEntry("3", 65.49, 57.29)
-        benchmarkData += CustomDataEntry("4", 67.99, 59.69)
-        benchmarkData += CustomDataEntry("5", 70.09, 61.69)
-        benchmarkData += CustomDataEntry("6", 71.89, 63.29)
-        benchmarkData += CustomDataEntry("7", 73.49, 64.79)
-        benchmarkData += CustomDataEntry("8", 74.99, 66.19)
-        benchmarkData += CustomDataEntry("9", 76.49, 67.49)
-        benchmarkData += CustomDataEntry("10", 77.89, 68.69)
-        benchmarkData += CustomDataEntry("11", 79.19, 69.89)
-        benchmarkData += CustomDataEntry("12", 80.49, 70.99)
-        benchmarkData += CustomDataEntry("13", 81.79, 72.09)
-        benchmarkData += CustomDataEntry("14", 82.99, 73.09)
-        benchmarkData += CustomDataEntry("15", 84.19, 74.09)
-        benchmarkData += CustomDataEntry("16", 85.39, 74.99)
-        benchmarkData += CustomDataEntry("17", 86.49, 75.99)
-        benchmarkData += CustomDataEntry("18", 87.69, 76.89)
-        benchmarkData += CustomDataEntry("19", 88.79, 77.69)
-        benchmarkData += CustomDataEntry("20", 89.79, 78.59)
-        benchmarkData += CustomDataEntry("21", 90.89, 79.39)
-        benchmarkData += CustomDataEntry("22", 91.89, 80.19)
-        benchmarkData += CustomDataEntry("23", 92.89, 80.99)
-        benchmarkData += CustomDataEntry("24", 93.89, 81.69)
+        if(viewBeratBadan == true){
+            titleStatistic.setText("Berat Badan")
+            benchmarkData += CustomDataEntry("0", 4.4, 2.5)
+            benchmarkData += CustomDataEntry("1", 5.8, 3.4)
+            benchmarkData += CustomDataEntry("2", 7.1, 4.3)
+            benchmarkData += CustomDataEntry("3", 8.0, 5.0)
+            benchmarkData += CustomDataEntry("4", 8.7, 5.6)
+            benchmarkData += CustomDataEntry("5", 9.3, 6.0)
+            benchmarkData += CustomDataEntry("6", 9.8, 6.4)
+            benchmarkData += CustomDataEntry("7", 10.3, 6.7)
+            benchmarkData += CustomDataEntry("8", 10.7, 6.9)
+            benchmarkData += CustomDataEntry("9", 11.0, 7.1)
+            benchmarkData += CustomDataEntry("10", 11.4, 7.4)
+            benchmarkData += CustomDataEntry("11", 11.7, 7.6)
+            benchmarkData += CustomDataEntry("12", 12.0, 7.7)
+            benchmarkData += CustomDataEntry("13", 12.3, 7.9)
+            benchmarkData += CustomDataEntry("14", 12.6, 8.1)
+            benchmarkData += CustomDataEntry("15", 12.8, 8.3)
+            benchmarkData += CustomDataEntry("16", 13.1, 8.4)
+            benchmarkData += CustomDataEntry("17", 13.4, 8.6)
+            benchmarkData += CustomDataEntry("18", 13.7, 8.8)
+            benchmarkData += CustomDataEntry("19", 13.9, 8.9)
+            benchmarkData += CustomDataEntry("20", 14.2, 9.1)
+            benchmarkData += CustomDataEntry("21", 14.5, 9.2)
+            benchmarkData += CustomDataEntry("22", 14.7, 9.4)
+            benchmarkData += CustomDataEntry("23", 15.0, 9.5)
+            benchmarkData += CustomDataEntry("24", 15.5, 9.7)
+        }
+        else if(viewLingkarKepala == true){
+            titleStatistic.setText("Lingkar Kepala")
+
+        }
+        else{
+            titleStatistic.setText("Tinggi Badan")
+            benchmarkData += CustomDataEntry("0", 53.69, 46.09)
+            benchmarkData += CustomDataEntry("1", 58.59, 50.79)
+            benchmarkData += CustomDataEntry("2", 62.39, 54.39)
+            benchmarkData += CustomDataEntry("3", 65.49, 57.29)
+            benchmarkData += CustomDataEntry("4", 67.99, 59.69)
+            benchmarkData += CustomDataEntry("5", 70.09, 61.69)
+            benchmarkData += CustomDataEntry("6", 71.89, 63.29)
+            benchmarkData += CustomDataEntry("7", 73.49, 64.79)
+            benchmarkData += CustomDataEntry("8", 74.99, 66.19)
+            benchmarkData += CustomDataEntry("9", 76.49, 67.49)
+            benchmarkData += CustomDataEntry("10", 77.89, 68.69)
+            benchmarkData += CustomDataEntry("11", 79.19, 69.89)
+            benchmarkData += CustomDataEntry("12", 80.49, 70.99)
+            benchmarkData += CustomDataEntry("13", 81.79, 72.09)
+            benchmarkData += CustomDataEntry("14", 82.99, 73.09)
+            benchmarkData += CustomDataEntry("15", 84.19, 74.09)
+            benchmarkData += CustomDataEntry("16", 85.39, 74.99)
+            benchmarkData += CustomDataEntry("17", 86.49, 75.99)
+            benchmarkData += CustomDataEntry("18", 87.69, 76.89)
+            benchmarkData += CustomDataEntry("19", 88.79, 77.69)
+            benchmarkData += CustomDataEntry("20", 89.79, 78.59)
+            benchmarkData += CustomDataEntry("21", 90.89, 79.39)
+            benchmarkData += CustomDataEntry("22", 91.89, 80.19)
+            benchmarkData += CustomDataEntry("23", 92.89, 80.99)
+            benchmarkData += CustomDataEntry("24", 93.89, 81.69)
+        }
+
+
 
 
         val set = Set.instantiate()
@@ -195,11 +271,53 @@ class ViewChart : AppCompatActivity(){
 
     }
 
-   /* private fun getData(): List<DataEntry>? {
+    private fun tambahData() {
+        var tambahDt = Intent(this@ViewChart, Tambah_DataPertumbuhan::class.java)
+        startActivity(tambahDt)
+        finishAffinity()
+    }
+
+    private fun historyData(){
+        var historyDt = Intent(this@ViewChart, Edit_DataPertumbuhan::class.java)
+        startActivity(historyDt)
+        finishAffinity()
+    }
+
+    private fun onAddButtonClicked() {
+        setVisibilty(clicked)
+        setAnimation(clicked)
+        clicked = !clicked
+    }
+    private fun setVisibilty(clicked: Boolean) {
+        if(!clicked){
+            btnAdd.visibility = View.VISIBLE
+            btnHistory.visibility = View.VISIBLE
+        }
+        else{
+            btnAdd.visibility = View.INVISIBLE
+            btnHistory.visibility = View.INVISIBLE
+        }
+    }
+    private fun setAnimation(clicked:Boolean) {
+        if(!clicked){
+            btnAdd.startAnimation(fromBottom)
+            btnHistory.startAnimation(fromBottom)
+            btnMenu.startAnimation(rotateOpen)
+        }
+        else{
+            btnAdd.startAnimation(toBottom)
+            btnHistory.startAnimation(toBottom)
+            btnMenu.startAnimation(rotateClose)
+        }
+    }
 
 
 
-    }*/
+    /* private fun getData(): List<DataEntry>? {
+
+
+
+     }*/
 
 
     private class CustomDataEntry internal constructor(

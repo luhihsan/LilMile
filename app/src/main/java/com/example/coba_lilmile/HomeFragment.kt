@@ -57,6 +57,7 @@ class HomeFragment : Fragment() {
 
         pageTB.setOnClickListener{
             val intent = Intent(requireActivity().applicationContext, ViewChart::class.java)
+            intent.putExtra("viewTinggiBadan", true)
             startActivity(intent)
         }
 

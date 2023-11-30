@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReservasiFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/appbar_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/topAppBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:background="@drawable/bg_top_profil"
+                    app:navigationIcon="@drawable/arrow_back_"
+                    tools:layout_editor_absoluteX="6dp"
+                    tools:layout_editor_absoluteY="-2dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_cari"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/edittext_background"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:foreground="@drawable/edittext_stroke"
+                            android:hint="Cari..."
+                            android:paddingStart="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageButton
+                            android:id="@+id/ib_tanggal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            app:layout_constraintEnd_toEndOf="@+id/et_cari"
+                            app:layout_constraintHorizontal_bias="0.959"
+                            app:layout_constraintStart_toStartOf="@+id/et_cari"
+                            app:layout_constraintTop_toTopOf="@+id/et_cari"
+                            app:srcCompat="@drawable/search_icon"
+                            tools:ignore="MissingConstraints" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.appbar.MaterialToolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:layout_editor_absoluteX="0dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="15dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/iv_ismangoen"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="150dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/rskia_45_prof__dr__ismangoen" />
+
+                                <TextView
+                                    android:id="@+id/tv_ismangoen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/iv_ismangoen"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginRight="7dp"
+                                    android:text="RSKIA 45 Prof. Dr. Ismangoen"
+                                    android:textAllCaps="true"
+                                    android:textColor="#000000"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_alamat_ismangoen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_ismangoen"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginTop="0dp"
+                                    android:layout_marginRight="7dp"
+                                    android:text="Jl. Patangpuluhan No.35, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55251" />
+
+                                <TextView
+                                    android:id="@+id/tv_waktu_ismangoen"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_alamat_ismangoen"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginRight="7dp"
+                                    android:text="Buka Senin-Sabtu pukul 10.00-20.00" />
+
+                                <Button
+                                    android:id="@+id/b_ismangoen"
+                                    android:layout_width="125dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_waktu_ismangoen"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:backgroundTint="#4287f5"
+                                    android:onClick="fpindah"
+                                    android:text="Reservasi" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/card1"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="15dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/iv_rachmi"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="150dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/rskia_rachmi" />
+
+                                <TextView
+                                    android:id="@+id/tv_rachmi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/iv_rachmi"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginRight="7dp"
+                                    android:text="RSKIA Rachmi"
+                                    android:textAllCaps="true"
+                                    android:textColor="#000000"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_alamat_rachmi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_rachmi"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginTop="0dp"
+                                    android:layout_marginRight="7dp"
+                                    android:text="Jl. KH. Wachid Hasyim D.I No.47, Notoprajan, Ngampilan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55262" />
+
+                                <TextView
+                                    android:id="@+id/tv_waktu_rachmi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_alamat_rachmi"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginRight="7dp"
+                                    android:text="Buka 24 jam" />
+
+                                <Button
+                                    android:id="@+id/b_rachmi"
+                                    android:layout_width="125dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_waktu_rachmi"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:backgroundTint="#4287f5"
+                                    android:onClick="fpindah"
+                                    android:text="Reservasi" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/card2"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="100dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/iv_medica"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="150dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/doc_medica" />
+
+                                <TextView
+                                    android:id="@+id/tv_medica"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/iv_medica"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginRight="7dp"
+                                    android:text="Doc.O Medica"
+                                    android:textAllCaps="true"
+                                    android:textColor="#000000"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_alamat_medica"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_medica"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginTop="0dp"
+                                    android:layout_marginRight="7dp"
+                                    android:text="Jl. Monjali No.143A, Kutu Dukuh, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284" />
+
+                                <TextView
+                                    android:id="@+id/tv_waktu_medica"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_alamat_medica"
+                                    android:layout_marginLeft="7dp"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginRight="7dp"
+                                    android:text="Buka Senin-Sabtu pukul 09.00-21.00" />
+
+                                <Button
+                                    android:id="@+id/b_medica"
+                                    android:layout_width="125dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_waktu_medica"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:backgroundTint="#4287f5"
+                                    android:onClick="fpindah"
+                                    android:text="Reservasi" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</FrameLayout>

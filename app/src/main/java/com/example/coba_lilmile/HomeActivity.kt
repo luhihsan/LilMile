@@ -1,12 +1,8 @@
 package com.example.coba_lilmile
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import com.example.coba_lilmile.util.PreferenceHelper
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
@@ -29,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId){
 
                 R.id.menu_1 -> replaceFragment(HomeFragment())
-                R.id.menu_2 -> replaceFragment(HistoryFragment())
+                R.id.menu_2 -> replaceFragment(ReservasiFragment())
                 R.id.menu_3 -> replaceFragment(ProfileFragment())
 
                 else ->{

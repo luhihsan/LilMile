@@ -61,6 +61,8 @@ class MainActivity : AppCompatActivity() {
         return Pengguna(
             id = UUID.randomUUID().toString(),
             username = username,
+            nama = "",
+            notelp = "",
             email = email,
             password = password
         )
@@ -94,4 +96,4 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-data class Pengguna(val id: String = UUID.randomUUID().toString(), val username: String, val email: String, val password: String)
+data class Pengguna(val id: String = UUID.randomUUID().toString(), val username: String, val email: String, val nama:String, val notelp:String, val password: String)

@@ -1,6 +1,7 @@
 package com.example.coba_lilmile
 
 import android.view.LayoutInflater
+import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -9,8 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Adapter_DataPertumbuhan(
     private var list: List<DataUpdatePertumbuhan>,
-    val itemClicked: OnItemClicked
+    val itemClicked: OnItemClicked,
 ) : RecyclerView.Adapter<Adapter_DataPertumbuhan.AdapterPertumbuhanViewHolder>() {
+
 
     inner class AdapterPertumbuhanViewHolder(private val view: View) :
         RecyclerView.ViewHolder(view) {

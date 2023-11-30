@@ -24,8 +24,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:background="@drawable/bg_view">
+                android:layout_height="209dp"
+                android:background="@drawable/bg_top_profil">
 
                 <!--                <ImageView-->
                 <!--                    android:id="@+id/imageView2"-->
