@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Artikel">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@color/mainBlue"
+            android:gravity="center"
+            android:shadowColor="@color/buttonColor"
+            android:text="Artikel Untuk Bunda"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Jadwal Imunisasi Sesuai Usia Si Kecil"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_width="260dp"
+            android:layout_height="250dp"
+            android:src="@drawable/imunisasi1"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="30 November 2023"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ditulis oleh Galuh Ihsan / dr. Lucyana Alim Santoso, Sp.A (Editor)"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text="Imunisasi dasar pada anak bertujuan membentuk kekebalan tubuh dan mencegah penularan penyakit berbahaya. Imunisasi dasar terdiri dari vaksin seperti Hepatitis B, DPT, BCG, HiB, Polio, PCV, dan Rotavirus, dengan jadwal yang telah ditetapkan oleh Kemenkes dan IDAI."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text="Tujuan utama imunisasi dasar adalah melindungi anak dari penyakit, kecacatan, atau kematian, serta membentuk herd immunity. Herd immunity penting untuk mencegah penyebaran penyakit pada orang yang tidak dapat mendapatkan imunisasi."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="gravity"
+            android:text="Berikut adalah jadwal imunisasi dasar lengkap:"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="
+            Usia 0–6 Bulan:\n
+            - Hepatitis B (4 kali)\n
+            - DPT (3 kali)\n
+            - BCG (1 kali)\n
+            - HiB (3 kali)\n
+            - Polio (oral dan suntik)\n
+            - PCV (3 kali)\n
+            - Rotavirus (2-3 kali)\n\n
+            Usia 6–12 Bulan:\n
+            - Influenza (setiap tahun)\n
+            - Japanese Encephalitis (1 kali dengan booster)\n
+            - MMR (2 kali)\n\n
+            Usia 12–24 Bulan:\n
+            - Hepatitis A (2 kali)\n
+            - Varisela (2 kali)\n\n
+            Usia 2–18 Tahun:\n
+            - Tifoid (setiap 3 tahun)\n
+            - Dengue (3 kali)\n
+            - HPV (2 kali)"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="gravity"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:text="Jenis imunisasi dasar mencakup vaksin Polio, Hepatitis B, BCG, HiB, DPT, MMR, Rotavirus, dan PCV, yang mencegah berbagai penyakit seperti polio, hepatitis B, TB, pneumonia, meningitis, difteri, pertussis, tetanus, gondok, campak, rubella, dan infeksi bakteri penyebab pneumonia."
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="gravity"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:text="Meskipun imunisasi dapat menyebabkan efek samping ringan seperti ruam, demam ringan, dan nyeri di area suntikan, reaksi ini umumnya bersifat ringan dan merupakan tanda bahwa sistem kekebalan sedang bekerja. Jika anak melewatkan jadwal imunisasi, dapat dilakukan imunisasi kejar hingga usia 18 tahun, tetapi tidak mencakup semua jenis vaksin."
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="gravity"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:text="Penting bagi orang tua memastikan anak mendapatkan vaksinasi sesuai jadwal untuk mengurangi risiko tertularnya penyakit."
+            />
+
+    </LinearLayout>
+
+</ScrollView>
