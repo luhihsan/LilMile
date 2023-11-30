@@ -19,6 +19,8 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
     private lateinit var preference: PreferenceHelper
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah_data_pertumbuhan)

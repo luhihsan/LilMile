@@ -222,7 +222,14 @@ class ViewChart : AppCompatActivity(){
                                 Toast.LENGTH_LONG
                             ).show()*/
 
-                            seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.tinggi_tumbuh)
+                            if(viewBeratBadan == true){
+                                seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.berat_tumbuh)
+                            }
+                            else if(viewTinggiBadan == true){
+                                seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.tinggi_tumbuh)
+                            }
+
+
 
                             /*val dataUmur = dataAnak.umur_tumbuh
                             val dataTinggi = dataAnak.tinggi_tumbuh
@@ -235,7 +242,13 @@ class ViewChart : AppCompatActivity(){
 
 
                 val series3: Line = areaChart.line(seriesData)
-                series3.name("Tinggi Anak")
+                if(viewBeratBadan == true){
+                    series3.name("Berat Anak")
+                }
+                else if(viewTinggiBadan == true){
+                    series3.name("Tinggi Anak")
+                }
+
                 series3.stroke("2 #0066cc")
                 series3.hovered().stroke("3 #0066cc")
                 series3.hovered().markers().enabled(true)
@@ -274,13 +287,11 @@ class ViewChart : AppCompatActivity(){
     private fun tambahData() {
         var tambahDt = Intent(this@ViewChart, Tambah_DataPertumbuhan::class.java)
         startActivity(tambahDt)
-        finishAffinity()
     }
 
     private fun historyData(){
         var historyDt = Intent(this@ViewChart, Edit_DataPertumbuhan::class.java)
         startActivity(historyDt)
-        finishAffinity()
     }
 
     private fun onAddButtonClicked() {

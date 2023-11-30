@@ -28,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Profil Anak"
+                    android:text="Profil"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -41,160 +41,113 @@
             android:fillViewport="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/ava"
-                    android:layout_width="129dp"
-                    android:layout_height="93dp"
-                    android:layout_marginTop="30dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ava"
-                    tools:ignore="ImageContrastCheck" />
-
-                <TextView
-                    android:id="@+id/txtNamaLengkap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="1dp"
-                    android:text="@string/nama_lengkap"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ava" />
-
-                <EditText
-                    android:id="@+id/edtfullName"
-                    android:layout_width="343dp"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="5dp"
-                    android:hint="@string/fill_namalengkap"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="1dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtNamaLengkap" />
-
-                <TextView
-                    android:id="@+id/txtEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/email"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edtfullName" />
-
-                <EditText
-                    android:id="@+id/edtEmail"
-                    android:layout_width="343dp"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="1dp"
-                    android:hint="@string/fill_email"
-                    android:paddingStart="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
-
-                <TextView
-                    android:id="@+id/txtJenisKelamin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/jenis_kelamin"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.148"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
-
-                <RadioGroup
-                    android:id="@+id/radioGroupGender"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:paddingStart="45dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtJenisKelamin">
+                    android:layout_height="match_parent">
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/profile_image_cardview"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="32dp"
+                        app:cardCornerRadius="60dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/profile_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_defaultprofile4" />
+
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/txtNamaLengkap"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:text="@string/nama_lengkap" />
 
-                        <RadioButton
-                            android:id="@+id/radioButtonLK"
-                            android:layout_width="0dp"
-                            android:layout_height="48dp"
-                            android:layout_weight="1"
-                            android:text="@string/laki_laki" />
+                    <EditText
+                        android:id="@+id/editName"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:hint="@string/fill_namalengkap" />
 
-                        <RadioButton
-                            android:id="@+id/radioButtonPR"
-                            android:layout_width="0dp"
-                            android:layout_height="48dp"
-                            android:layout_weight="1"
-                            android:text="@string/perempuan" />
+                    <TextView
+                        android:id="@+id/txtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email" />
 
-                    </LinearLayout>
+                    <EditText
+                        android:id="@+id/editEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:hint="@string/fill_email" />
 
-                </RadioGroup>
+                    <TextView
+                        android:id="@+id/txtUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Username" />
 
-                <TextView
-                    android:id="@+id/txtTanggalLahir"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/tanggal_lahir"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/radioGroupGender" />
+                    <EditText
+                        android:id="@+id/editUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:hint="@string/fill_email" />
 
-                <EditText
-                    android:id="@+id/edtTanggal"
-                    android:layout_width="343dp"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="1dp"
-                    android:clickable="false"
-                    android:focusable="false"
-                    android:hint="@string/dd_mm_yy"
-                    android:paddingStart="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtTanggalLahir" />
+                    <TextView
+                        android:id="@+id/txtnotelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No. Telepon" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonTanggal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:onClick="fSetTanggal"
-                    app:layout_constraintEnd_toEndOf="@+id/edtTanggal"
-                    app:layout_constraintHorizontal_bias="0.959"
-                    app:layout_constraintStart_toStartOf="@+id/edtTanggal"
-                    app:layout_constraintTop_toTopOf="@+id/edtTanggal"
-                    app:srcCompat="@drawable/calendar_icon"
-                    tools:ignore="MissingConstraints" />
+                    <EditText
+                        android:id="@+id/editNotelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:hint="Masukkan No. Telepon" />
+                </LinearLayout>
 
-                <Button
-                    android:id="@+id/buttonSave"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:backgroundTint="#4287f5"
-                    android:textColor="#ffff"
-                    android:text="@string/simpan_perubahan"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButtonTanggal" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/mainBlue"
+                android:text="@string/simpan_perubahan"
+                android:textColor="#ffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -102,6 +102,8 @@ class Login : AppCompatActivity() {
 
                                 preference.setValues("id", user.id.toString())
                                 preference.setValues("username", user.username.toString())
+                                preference.setValues("nama", user.nama.toString())
+                                preference.setValues("notelp", user.notelp.toString())
                                 preference.setValues("email", user.email.toString())
                                 preference.setValues("password", user.password.toString())
                                 preference.setValues("status", "1")

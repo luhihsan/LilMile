@@ -104,6 +104,7 @@
                             android:text="@string/umurANak" />
                     </LinearLayout>
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -280,7 +281,6 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/nunito_semibold"
-                                android:text="40cm"
                                 android:textAlignment="textStart"
                                 android:textSize="12sp" />
 
@@ -335,14 +335,6 @@
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
 
             </LinearLayout>
 
