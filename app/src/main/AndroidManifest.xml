@@ -21,7 +21,7 @@
             android:name=".welcome_page"
             android:exported="false" />
         <activity
-            android:name=".Homepage"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".Edit_DataPertumbuhan"

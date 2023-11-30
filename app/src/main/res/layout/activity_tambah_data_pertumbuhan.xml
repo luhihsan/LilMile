@@ -95,19 +95,14 @@
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp" />
+                    android:layout_margin="16dp" />
 
                 <Button
                     android:id="@+id/btnUpFotoTumbuh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#4287f5"
                     android:layout_gravity="center"
-<<<<<<< Updated upstream
-                    android:textColor="#ffffff"
-=======
-                    android:layout_marginTop="16dp"
->>>>>>> Stashed changes
+                    android:backgroundTint="@color/mainBlue"
                     android:text="Unggah Foto"
                     android:textColor="@color/black" />
             </LinearLayout>
@@ -117,13 +112,8 @@
             android:id="@+id/btnSave_tumbuh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< Updated upstream
-            android:backgroundTint="#4287f5"
-            android:textColor="#ffffff"
-            android:text="Simpan"
-=======
->>>>>>> Stashed changes
             android:layout_marginTop="16dp"
+            android:backgroundTint="@color/mainBlue"
             android:onClick="simpanDataPertumbuhan"
             android:text="Simpan"
             android:textColor="@color/black" />
