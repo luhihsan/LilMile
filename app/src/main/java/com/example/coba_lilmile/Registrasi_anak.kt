@@ -9,6 +9,7 @@ import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.coba_lilmile.util.PreferenceHelper
 import com.google.firebase.database.FirebaseDatabase
 import java.util.Calendar
 
@@ -16,13 +17,14 @@ class Registrasi_anak : AppCompatActivity() {
 
     private var etDateOfBirth: EditText? = null
     private val db by lazy { FirebaseDatabase.getInstance().reference }
-
+    private lateinit var preference: PreferenceHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrasi_anak)
 
         etDateOfBirth = findViewById(R.id.etDateOfBirth)
+        preference = PreferenceHelper(this)
     }
 
     fun showDatePicker(view: View?) {
@@ -98,6 +100,7 @@ class Registrasi_anak : AppCompatActivity() {
 
             // Buat objek untuk menyimpan data anak
             val anak = DataAnak(
+                idAkun = preference.getValues("id").toString(),
                 fullName = fullName,
                 dateOfBirth = dateOfBirth,
                 gender = selectedGender,

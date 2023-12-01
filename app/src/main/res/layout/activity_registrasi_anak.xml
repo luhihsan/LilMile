@@ -31,7 +31,7 @@
                     android:layout_width="96dp"
                     android:layout_height="96dp"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/ava"/>
+                    app:srcCompat="@drawable/ava" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
                     android:layout_marginTop="20dp"
                     android:text="Data Diri Si Kecil"
                     android:textSize="18dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -53,9 +53,9 @@
                     android:id="@+id/etFullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:hint="Nama Lengkap"
-                    android:inputType="textPersonName"
-                    android:layout_marginTop="16dp" />
+                    android:inputType="textPersonName" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -68,10 +68,10 @@
                     android:id="@+id/etDateOfBirth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tanggal Lahir"
                     android:layout_marginTop="16dp"
                     android:clickable="true"
                     android:focusable="false"
+                    android:hint="Tanggal Lahir"
                     android:onClick="showDatePicker" />
 
                 <TextView
@@ -109,7 +109,7 @@
                     android:layout_marginTop="10dp"
                     android:text="Data Kelahiran"
                     android:textSize="18dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/etWeight"
@@ -131,9 +131,9 @@
                     android:id="@+id/etHeadCircumference"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:hint="Lingkar Kepala saat lahir (cm)"
-                    android:inputType="numberDecimal"
-                    android:layout_marginTop="16dp" />
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -146,18 +146,18 @@
                     android:id="@+id/spAdditionalProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/blood_types"
                     android:layout_marginTop="16dp"
-                    android:padding="12dp"/>
+                    android:entries="@array/blood_types"
+                    android:padding="12dp" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#4287f5"
-                    android:textColor="#ffffff"
-                    android:text="Simpan Data"
                     android:layout_margin="16dp"
-                    android:onClick="simpanDataAnak" />
+                    android:backgroundTint="@color/mainBlue"
+                    android:onClick="simpanDataAnak"
+                    android:text="Simpan Data"
+                    android:textColor="#ffffff" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

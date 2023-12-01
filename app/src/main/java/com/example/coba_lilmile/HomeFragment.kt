@@ -109,6 +109,7 @@ class HomeFragment : Fragment() {
             startActivity(goBB)
         }
 
+
         databaseReference.orderByChild("umur_tumbuh").addValueEventListener(object :
             ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

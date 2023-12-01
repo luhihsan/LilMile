@@ -154,7 +154,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/poppins_bold"
                                 android:gravity="center_vertical"
-                                android:text="@string/hasilInterpret"
+                                android:text="Normal"
                                 android:textStyle="bold" />
                         </LinearLayout>
 
