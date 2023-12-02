@@ -6,8 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
+import android.widget.Button
+import android.widget.TextView
+import com.example.coba_lilmile.util.PreferenceHelper
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,9 +23,13 @@ private const val ARG_PARAM2 = "param2"
 class ProfileFragment : Fragment() {
     // TODO: Rename and change types of parameters
 
-    private lateinit var keProfil: ConstraintLayout
-    private lateinit var keSetting: ConstraintLayout
-    private lateinit var keAlamat: ConstraintLayout
+    private lateinit var keProfil: Button
+    /*private lateinit var keSetting: Button
+    private lateinit var keAlamat: Button*/
+
+    private lateinit var preference: PreferenceHelper
+
+    private lateinit var textNamaProfile: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,11 +47,20 @@ class ProfileFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        keProfil = requireView().findViewById(R.id.opsiProfile)
+        preference = PreferenceHelper(requireActivity().applicationContext)
+        textNamaProfile = requireView().findViewById(R.id.textNamaProfile)
+        keProfil = requireView().findViewById(R.id.btnkeProfil)
+
+        if(preference.getValues("nama")!= ""){
+            textNamaProfile.setText(preference.getValues("nama"))
+        }
+        else{
+            textNamaProfile.setText(preference.getValues("username"))
+        }
 
         keProfil.setOnClickListener{
-            val goProfile = Intent(requireActivity().applicationContext, Edit_Profile::class.java)
-            startActivity(goProfile)
+            val goEditProfile = Intent(requireActivity().applicationContext, Edit_Profile::class.java)
+            startActivity(goEditProfile)
         }
     }
 

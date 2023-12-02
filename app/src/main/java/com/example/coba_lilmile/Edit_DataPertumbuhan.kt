@@ -42,7 +42,7 @@ class Edit_DataPertumbuhan : AppCompatActivity(), OnItemClicked {
     }
 
     private fun loadDataFromFirebase() {
-        databaseReference.addValueEventListener(object : ValueEventListener {
+        databaseReference.orderByChild("umur_tumbuh").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 listPertumbuhan.clear()
                 if(snapshot.exists()){

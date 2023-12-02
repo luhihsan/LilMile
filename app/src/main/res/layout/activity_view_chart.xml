@@ -110,13 +110,14 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
+                    android:layout_height="250dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
                     android:layout_marginBottom="32dp"
                     app:cardBackgroundColor="#F0F0F0"
                     app:cardCornerRadius="20dp"
+                    app:cardElevation="5dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -130,6 +131,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="10dp"
+                        android:elevation="50dp"
                         android:orientation="vertical"
                         android:padding="10dp">
 
@@ -154,7 +156,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/poppins_bold"
                                 android:gravity="center_vertical"
-                                android:text="Normal"
+                                android:text="—"
                                 android:textStyle="bold" />
                         </LinearLayout>
 
@@ -164,7 +166,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_regular"
                             android:gravity="center_vertical"
-                            android:text="@string/hasilInter"
+                            android:text="—"
                             android:textStyle="bold" />
                     </LinearLayout>
 

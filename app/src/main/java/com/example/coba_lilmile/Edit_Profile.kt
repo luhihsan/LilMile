@@ -28,26 +28,29 @@ class Edit_Profile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profil)
 
-       /* et_nama_profile = findViewById(R.id.editName)
+        et_nama_profile = findViewById(R.id.editName)
         et_username_profile = findViewById(R.id.editUsername)
         et_email_profile = findViewById(R.id.editEmail)
-        et_nohp_profile = findViewById(R.id.editNotelp)*/
+        et_nohp_profile = findViewById(R.id.editNotelp)
 
-        /*preference = PreferenceHelper(this)
+        var idUser: String? = ""
+
+        preference = PreferenceHelper(this)
         databaseReference = FirebaseDatabase.getInstance().reference.child("user")
 
-        if(preference.getValues("nama") != "" && preference.getValues("email") != ""){
+        if(preference.getValues("email") != ""){
             et_nama_profile.setText(preference.getValues("nama"))
             et_username_profile.setText(preference.getValues("username"))
             et_email_profile.setText(preference.getValues("email"))
-            et_nohp_profile.setText(preference.getValues("noHp"))
+            et_nohp_profile.setText(preference.getValues("notelp"))
+
+            idUser = preference.getValues("id").toString()
         }
 
 
 
         buttonSave = findViewById(R.id.buttonSave)
-*/
-        /*buttonSave.setOnClickListener{
+        buttonSave.setOnClickListener{
             if(et_nama_profile.text.isNotEmpty() && et_username_profile.text.isNotEmpty() && et_email_profile.text.isNotEmpty() && et_nohp_profile.text.isNotEmpty()){
                 val updateData = mapOf<String, String>(
                     "nama" to et_nama_profile.text.toString(),
@@ -56,12 +59,12 @@ class Edit_Profile : AppCompatActivity() {
                     "noHp" to et_nohp_profile.text.toString()
                 )
 //
-                databaseReference.child("user").updateChildren(updateData).addOnCanceledListener {
+                databaseReference.child("${preference.getValues("id")}").updateChildren(updateData).addOnCanceledListener {
                     Toast.makeText(this,"berhasil update", Toast.LENGTH_LONG).show()
                 }
 //
             }
-        }*/
+        }
 
 
 

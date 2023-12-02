@@ -94,7 +94,7 @@ class ViewChart : AppCompatActivity(){
         // Inisialisasi Line Chart
         val lineChart = AnyChart.line()
 
-        /*lineChart.padding(10.0, 20.0, 5.0, 20.0);*/
+        lineChart.padding(10.0, 20.0, 5.0, 20.0);
         lineChart.yAxis(0).title("Tinggi (cm)");
         lineChart.xAxis(0).title("Usia (bulan)");
 
