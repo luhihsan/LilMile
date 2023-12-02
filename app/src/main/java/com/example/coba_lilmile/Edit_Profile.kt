@@ -28,10 +28,10 @@ class Edit_Profile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profil)
 
-        et_nama_profile = findViewById(R.id.editName)
+       /* et_nama_profile = findViewById(R.id.editName)
         et_username_profile = findViewById(R.id.editUsername)
         et_email_profile = findViewById(R.id.editEmail)
-        et_nohp_profile = findViewById(R.id.editNotelp)
+        et_nohp_profile = findViewById(R.id.editNotelp)*/
 
         /*preference = PreferenceHelper(this)
         databaseReference = FirebaseDatabase.getInstance().reference.child("user")

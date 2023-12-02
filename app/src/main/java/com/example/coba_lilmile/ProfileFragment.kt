@@ -47,7 +47,6 @@ class ProfileFragment : Fragment() {
         keProfil.setOnClickListener{
             val goProfile = Intent(requireActivity().applicationContext, Edit_Profile::class.java)
             startActivity(goProfile)
-
         }
     }
 

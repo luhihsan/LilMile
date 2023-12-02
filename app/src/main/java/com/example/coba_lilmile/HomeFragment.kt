@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
@@ -14,6 +15,7 @@ import com.anychart.chart.common.dataentry.ValueDataEntry
 import com.anychart.core.cartesian.series.Line
 import com.anychart.enums.MarkerType
 import com.example.coba_lilmile.util.PreferenceHelper
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -50,6 +52,10 @@ class HomeFragment : Fragment() {
 
     private lateinit var usiaAnak: TextView
 
+    private lateinit var btnTambahAnak: FloatingActionButton
+
+    private lateinit var imageCarousel1: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -81,7 +87,11 @@ class HomeFragment : Fragment() {
 
         usiaAnak = requireView().findViewById(R.id.usiaAnak)
 
+        btnTambahAnak = requireView().findViewById(R.id.btnTambahAnak)
+
         preference = PreferenceHelper(requireActivity().applicationContext)
+
+        imageCarousel1 = requireView().findViewById(R.id.imageCarousel1)
 
         var hitung: Int = 0
 
@@ -107,6 +117,14 @@ class HomeFragment : Fragment() {
             val goBB = Intent(requireActivity().applicationContext, ViewChart::class.java)
             goBB.putExtra("viewBeratBadan", true)
             startActivity(goBB)
+        }
+        btnTambahAnak.setOnClickListener{
+            val goTambah = Intent(requireActivity().applicationContext, Registrasi_anak::class.java)
+            startActivity(goTambah)
+        }
+        imageCarousel1.setOnClickListener{
+            val goArtikel = Intent(requireActivity().applicationContext, Artikel::class.java)
+            startActivity(goArtikel)
         }
 
 

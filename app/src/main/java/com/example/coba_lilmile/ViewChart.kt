@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import org.w3c.dom.Text
 
 
 class ViewChart : AppCompatActivity(){
@@ -43,11 +44,14 @@ class ViewChart : AppCompatActivity(){
     private lateinit var btnAdd : FloatingActionButton
     private lateinit var btnHistory : FloatingActionButton
 
-
+    private lateinit var textHasil: TextView
+    private lateinit var textHasilInterp: TextView
 
     private lateinit var titleStatistic: TextView
 
     private var clicked = false
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,6 +67,9 @@ class ViewChart : AppCompatActivity(){
         btnMenu = findViewById(R.id.btnMenu)
         btnAdd = findViewById(R.id.btnTambahData)
         btnHistory = findViewById(R.id.btnHistory)
+
+        textHasil = findViewById(R.id.textHasil)
+        textHasilInterp = findViewById(R.id.textHasilInterp)
 
         btnMenu.setOnClickListener{
             onAddButtonClicked()
@@ -96,7 +103,13 @@ class ViewChart : AppCompatActivity(){
         lineChart.yGrid(true)
 
         var benchmarkData: List<DataEntry> = ArrayList()
-        var seriesData: List<DataEntry> = listOf()
+        var seriesData: List<DataEntry> = ArrayList()
+        var indikator: String = ""
+
+        var tinggi: IntArray
+
+        var jumlah: Long = 0
+
 
         if(viewBeratBadan == true){
             titleStatistic.setText("Berat Badan")
@@ -125,6 +138,10 @@ class ViewChart : AppCompatActivity(){
             benchmarkData += CustomDataEntry("22", 14.7, 9.4)
             benchmarkData += CustomDataEntry("23", 15.0, 9.5)
             benchmarkData += CustomDataEntry("24", 15.5, 9.7)
+
+
+
+
         }
         else if(viewLingkarKepala == true){
             titleStatistic.setText("Lingkar Kepala")
@@ -157,6 +174,9 @@ class ViewChart : AppCompatActivity(){
             benchmarkData += CustomDataEntry("22", 91.89, 80.19)
             benchmarkData += CustomDataEntry("23", 92.89, 80.99)
             benchmarkData += CustomDataEntry("24", 93.89, 81.69)
+
+
+
         }
 
 
@@ -209,7 +229,7 @@ class ViewChart : AppCompatActivity(){
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if(dataSnapshot.exists()){
                     for (userSnapshot in dataSnapshot.children){
-                        val jumlahData: Long = dataSnapshot.childrenCount
+                        val jumlahData = dataSnapshot.childrenCount
                         val dataAnak = userSnapshot.getValue(isiDataAnak::class.java)
                         if (dataAnak == null) {
                             Toast.makeText(
@@ -223,9 +243,11 @@ class ViewChart : AppCompatActivity(){
                             ).show()*/
 
                             if(viewBeratBadan == true){
+                                indikator = "Berat"
                                 seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.berat_tumbuh)
                             }
                             else if(viewTinggiBadan == true){
+                                indikator = "Tinggi"
                                 seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.tinggi_tumbuh)
                             }
 
@@ -237,8 +259,12 @@ class ViewChart : AppCompatActivity(){
 
 
                         }
+
+
                     }
                 }
+
+
 
 
                 val series3: Line = areaChart.line(seriesData)
@@ -265,11 +291,52 @@ class ViewChart : AppCompatActivity(){
                 /*anyChartView.setChart(lineChart)*/
                 anyChartView.setChart(areaChart)
 
+
+
+
                 Toast.makeText(
                     this@ViewChart, "Data berhasil ditemukan",
                     Toast.LENGTH_LONG
                 ).show()
 
+                var sumData: Double = 0.0
+                var realData: Any
+                var itr2 = 0
+
+                for(ValueDataEntry in seriesData){
+                    realData = seriesData[itr2].getValue("value").toString()
+                    sumData += realData.toDouble()
+                    itr2++
+                }
+
+                var sumBenchmark1: Double = 0.0
+                var sumBenchmark2: Double = 0.0
+                var dataBenchmark1: Any
+                var dataBenchmark2:Any
+                var itr = 0
+
+                for(dataEntry in benchmarkData){
+                    dataBenchmark1 = benchmarkData[itr].getValue("value").toString()
+                    sumBenchmark1 += dataBenchmark1.toDouble()
+
+                    dataBenchmark2 = benchmarkData[itr].getValue("value2").toString()
+                    sumBenchmark2 += dataBenchmark2.toDouble()
+                    itr++
+
+                    if(itr == itr2){
+                        break
+                    }
+                }
+
+                if(sumData<=sumBenchmark1 && sumData>=sumBenchmark2){
+                    textHasilInterp.setText("Normal")
+                    textHasil.setText("$indikator anak normal. Pantau secara berkala, Ideal: $sumBenchmark1, Tidak Ideal: $sumBenchmark2," +
+                            "Data: $sumData")
+                }
+                else{
+                    textHasilInterp.setText("Tidak Normal")
+                    textHasil.setText("$indikator anak tidak normal, $sumBenchmark1, $sumBenchmark2, $sumData")
+                }
 
             }
 
@@ -279,9 +346,18 @@ class ViewChart : AppCompatActivity(){
                     Toast.LENGTH_LONG
                 ).show()
             }
+
+
+
         })
 
-        
+
+
+
+
+
+
+
 
 
     }
@@ -342,8 +418,6 @@ class ViewChart : AppCompatActivity(){
         ValueDataEntry(x, value) {
         init {
             setValue("value2", value2)
-
-
         }
     }
 

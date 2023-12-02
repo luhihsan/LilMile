@@ -1,5 +1,6 @@
 package com.example.coba_lilmile
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -86,5 +87,14 @@ class Edit_DataPertumbuhan : AppCompatActivity(), OnItemClicked {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        // Panggil intent untuk memulai ulang aktivitas sebelumnya
+        val intent = Intent(this, ViewChart::class.java)
+        startActivity(intent)
+
+        // Tutup aktivitas saat ini
+        finish()
+    }
 
 }

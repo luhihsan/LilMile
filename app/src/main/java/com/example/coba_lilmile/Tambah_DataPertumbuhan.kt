@@ -115,4 +115,15 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
             }
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        // Panggil intent untuk memulai ulang aktivitas sebelumnya
+        val intent = Intent(this, ViewChart::class.java)
+        startActivity(intent)
+
+        // Tutup aktivitas saat ini
+        finish()
+    }
+
 }

@@ -144,7 +144,7 @@
                                 android:layout_height="34dp"
                                 android:fontFamily="@font/poppins_bold"
                                 android:gravity="center_vertical"
-                                android:text="@string/interPret"
+                                android:text="Interpretasi: "
                                 android:textStyle="bold" />
 
                             <TextView
