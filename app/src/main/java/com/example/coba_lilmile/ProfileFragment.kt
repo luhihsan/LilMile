@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.example.coba_lilmile.util.PreferenceHelper
 
 // TODO: Rename parameter arguments, choose names that match
@@ -31,6 +32,8 @@ class ProfileFragment : Fragment() {
 
     private lateinit var textNamaProfile: TextView
 
+    private lateinit var btnLogout: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,6 +53,19 @@ class ProfileFragment : Fragment() {
         preference = PreferenceHelper(requireActivity().applicationContext)
         textNamaProfile = requireView().findViewById(R.id.textNamaProfile)
         keProfil = requireView().findViewById(R.id.btnkeProfil)
+        btnLogout = requireView().findViewById(R.id.btnLogout)
+        btnLogout.setOnClickListener{
+            preference.clear()
+            var goHome = Intent(requireActivity().applicationContext, welcome_page::class.java)
+
+            startActivity(goHome)
+            Toast.makeText(
+                requireActivity().applicationContext, "Anda Berhasil LogOut",
+                Toast.LENGTH_LONG
+            ).show()
+
+            requireActivity().finishAffinity()
+        }
 
         if(preference.getValues("nama")!= ""){
             textNamaProfile.setText(preference.getValues("nama"))
@@ -63,5 +79,6 @@ class ProfileFragment : Fragment() {
             startActivity(goEditProfile)
         }
     }
+
 
 }
