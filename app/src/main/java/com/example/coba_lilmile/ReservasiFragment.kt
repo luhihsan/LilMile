@@ -37,12 +37,15 @@ class ReservasiFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
 
+
     }
 
     fun fpindah(view: View) {
-        val intent = Intent(requireActivity(), ReservasiActivity::class.java)
+        val intent = Intent(requireActivity().applicationContext, ReservasiActivity::class.java)
         startActivity(intent)
     }
+
+
 
 
 

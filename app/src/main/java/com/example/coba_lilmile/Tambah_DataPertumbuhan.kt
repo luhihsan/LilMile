@@ -2,14 +2,21 @@ package com.example.coba_lilmile
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.content.RestrictionEntry.TYPE_NULL
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.anychart.chart.common.dataentry.ValueDataEntry
+import com.anychart.core.cartesian.series.Line
+import com.anychart.enums.MarkerType
 import com.example.coba_lilmile.util.PreferenceHelper
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.util.Calendar
 import java.util.UUID
 
@@ -31,9 +38,10 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
             showDatePicker()
         }
 
-
-
         databaseReference = FirebaseDatabase.getInstance().reference
+
+        var usiaMax: Int = 0
+        loadData()
     }
 
     private fun showDatePicker() {
@@ -115,6 +123,55 @@ class Tambah_DataPertumbuhan : AppCompatActivity() {
                     }
             }
         }
+    }
+
+    private fun loadData(){
+        databaseReference.child("pertumbuhan_anak").orderByChild("idAkun").equalTo(preference.getValues("id")).addValueEventListener(object :
+            ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if(dataSnapshot.exists()){
+                    /*for (userSnapshot in dataSnapshot.children){
+                        val dataAnak = userSnapshot.getValue(isiDataAnak::class.java)
+                        if (dataAnak == null) {
+                            Toast.makeText(
+                                this@Tambah_DataPertumbuhan, "Data tidak ditemukan",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        } else {
+                            *//*Toast.makeText(
+                                this@ViewChart, "Data ditemukan, jumlah: $jumlahData",
+                                Toast.LENGTH_LONG
+                            ).show()*//*
+                        }
+                    }*/
+                    val etUmur = findViewById<EditText>(R.id.etUmur_tumbuh)
+                    val umurMax: Long = dataSnapshot.childrenCount + 1
+                    etUmur.isFocusable = true
+                    etUmur.isFocusableInTouchMode = true
+                    etUmur.inputType = TYPE_NULL
+                    etUmur.setText(umurMax.toString())
+                }
+                else{
+                    val etUmur = findViewById<EditText>(R.id.etUmur_tumbuh)
+                    val umurMax: Long = 1
+                    etUmur.isFocusable = true
+                    etUmur.isFocusableInTouchMode = true
+                    etUmur.inputType = TYPE_NULL
+                    etUmur.setText(umurMax.toString())
+                }
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Toast.makeText(
+                    this@Tambah_DataPertumbuhan, databaseError.message,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
+
+
+        })
     }
 
     override fun onBackPressed() {

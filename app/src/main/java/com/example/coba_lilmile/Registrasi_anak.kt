@@ -123,7 +123,7 @@ class Registrasi_anak : AppCompatActivity() {
                         Toast.makeText(this, "Gagal menyimpan data anak", Toast.LENGTH_SHORT).show()
                     }
 
-                val intent = Intent(this, Tambah_DataPertumbuhan ::class.java)
+                val intent = Intent(this, HomeFragment ::class.java)
                 startActivity(intent)
             }
         }

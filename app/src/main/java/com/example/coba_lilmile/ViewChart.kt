@@ -255,6 +255,7 @@ class ViewChart : AppCompatActivity(){
                                     indikator = "Tinggi"
                                     seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.tinggi_tumbuh)
                                 }
+
                             }
                             else{
                                 Toast.makeText(

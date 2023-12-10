@@ -212,11 +212,8 @@ class HomeFragment : Fragment() {
                             Toast.makeText(activity, "Data anak tidak ditemukan", Toast.LENGTH_SHORT).show()
                         } else {
                             if(dataDiriAnak.idAkun.equals(idTemp)){
-                                namaAnak.setText(dataDiriAnak.fullName)
                                 btnTambahAnak.visibility = View.INVISIBLE
-                            }
-                            else{
-                                btnTambahAnak.visibility = View.VISIBLE
+                                namaAnak.setText(dataDiriAnak.fullName)
                             }
                         }
                     }
