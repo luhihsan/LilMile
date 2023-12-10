@@ -265,7 +265,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/nunito_semibold"
-                                android:text="15kg"
+                                android:text="-"
                                 android:textAlignment="textStart"
                                 android:textSize="12sp" />
 
@@ -278,7 +278,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_weight="1.2"
                                 android:fontFamily="@font/nunito_semibold"
-                                android:text="72cm"
+                                android:text="-"
                                 android:textAlignment="textStart"
                                 android:textSize="12sp" />
 
@@ -316,7 +316,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/nunito_semibold"
-                                android:text="15 Okt 2023"
+                                android:text="-"
                                 android:textAlignment="textStart"
                                 android:textSize="12sp" />
 
@@ -339,7 +339,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/nunito_semibold"
-                                android:text="0 Tahun 9 Bulan 4 Hari"
+                                android:text="-"
                                 android:textAlignment="textStart"
                                 android:textSize="12sp" />
                         </LinearLayout>
@@ -360,7 +360,7 @@
                 android:textStyle="bold" />
 
             <HorizontalScrollView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="150dp">
 
                 <LinearLayout
@@ -381,8 +381,8 @@
                         android:layout_width="274dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:src="@drawable/carousel2"
-                        android:clickable="true"/>
+                        android:clickable="true"
+                        android:src="@drawable/carousel2" />
                 </LinearLayout>
             </HorizontalScrollView>
 

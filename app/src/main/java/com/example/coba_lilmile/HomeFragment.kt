@@ -2,6 +2,7 @@ package com.example.coba_lilmile
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,20 +42,25 @@ class HomeFragment : Fragment() {
     private lateinit var preference: PreferenceHelper
 
     private lateinit var firebaseDatabase: FirebaseDatabase
+    private lateinit var firebaseDatabase2: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
+    private lateinit var databaseReference2: DatabaseReference
 
     private lateinit var dataTB: TextView
     private lateinit var dataBB: TextView
     private lateinit var dataLK: TextView
 
+    private lateinit var usiaAnak: TextView
+    private lateinit var namaAnak: TextView
+
     private lateinit var dataTanggal: TextView
     private lateinit var dataUsia: TextView
 
-    private lateinit var usiaAnak: TextView
 
     private lateinit var btnTambahAnak: FloatingActionButton
 
     private lateinit var imageCarousel1: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,6 +92,7 @@ class HomeFragment : Fragment() {
         dataUsia = requireView().findViewById(R.id.dataUsia)
 
         usiaAnak = requireView().findViewById(R.id.usiaAnak)
+        namaAnak = requireView().findViewById(R.id.namaAnak)
 
         btnTambahAnak = requireView().findViewById(R.id.btnTambahAnak)
 
@@ -94,9 +101,12 @@ class HomeFragment : Fragment() {
         imageCarousel1 = requireView().findViewById(R.id.imageCarousel1)
 
         var hitung: Int = 0
+        var usiaTemp:String
 
         firebaseDatabase = FirebaseDatabase.getInstance()
+        firebaseDatabase2 = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.reference.child("pertumbuhan_anak")
+        databaseReference2 = FirebaseDatabase.getInstance().getReference("anak")
 
         if(preference.getValues("nama")!= ""){
             namaUser.setText(preference.getValues("nama"))
@@ -128,27 +138,52 @@ class HomeFragment : Fragment() {
         }
 
 
+
+
+
+        var idTemp = preference.getValues("id").toString()
+
+        /*Toast.makeText(activity, "$idTemp", Toast.LENGTH_SHORT).show()*/
+        loadDataAnak(idTemp)
+
+        loadDataTumbuh()
+
+
+    }
+
+    private fun loadDataTumbuh(){
         databaseReference.orderByChild("umur_tumbuh").addValueEventListener(object :
             ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if(dataSnapshot.exists()){
                     for (userSnapshot in dataSnapshot.children){
                         val jumlahData: Long = dataSnapshot.childrenCount
-                        val dataAnak = userSnapshot.getValue(isiDataAnak::class.java)
-                        hitung += 1
-                        if (dataAnak == null) {
+                        var maxUmur: Int = 0
+                        val isiDataAnak = userSnapshot.getValue(isiDataAnak::class.java)
+                        if (isiDataAnak == null) {
 
                         } else {
-
-                            if(dataAnak.umur_tumbuh == jumlahData.toString()){
+                            if(isiDataAnak.idAkun.equals(preference.getValues("id"))){
+                                if(isiDataAnak.umur_tumbuh.equals(jumlahData.toString())){
+                                    dataTB.setText(isiDataAnak.tinggi_tumbuh.toString())
+                                    dataBB.setText(isiDataAnak.berat_tumbuh.toString())
+                                    var umur = isiDataAnak.umur_tumbuh
+                                    dataUsia.setText("0 Tahun $umur Bulan")
+                                    usiaAnak.setText(dataUsia.text)
+                                    dataTanggal.setText(isiDataAnak.tgl_tumbuh)
+                                    dataLK.setText("Kosong")
+                                    break
+                                }
+                            }
+                            /*else{
                                 dataTB.setText(dataAnak.tinggi_tumbuh.toString())
                                 dataBB.setText(dataAnak.berat_tumbuh.toString())
                                 var umur = dataAnak.umur_tumbuh
                                 dataUsia.setText("0 Tahun $umur Bulan")
-                                usiaAnak.setText("0 Tahun $umur Bulan")
+                                usiaAnak.setText(dataUsia.text)
                                 dataTanggal.setText(dataAnak.tgl_tumbuh)
                                 dataLK.setText("Kosong")
-                            }
+                            }*/
 
                         }
                     }
@@ -164,7 +199,38 @@ class HomeFragment : Fragment() {
 
             }
         })
+    }
+    private fun loadDataAnak(idTemp: String) {
+        databaseReference2.addValueEventListener(object :
+            ValueEventListener {
+            override fun onDataChange(dataAnakSnapshot: DataSnapshot) {
+                if(dataAnakSnapshot.exists()){
+                    var jumlah = dataAnakSnapshot.childrenCount
+                    for (getdataSnapshot in dataAnakSnapshot.children){
+                        var dataDiriAnak = getdataSnapshot.getValue(DataAnak::class.java)
+                        if (dataDiriAnak == null) {
+                            Toast.makeText(activity, "Data anak tidak ditemukan", Toast.LENGTH_SHORT).show()
+                        } else {
+                            if(dataDiriAnak.idAkun.equals(idTemp)){
+                                namaAnak.setText(dataDiriAnak.fullName)
+                                btnTambahAnak.visibility = View.INVISIBLE
+                            }
+                            else{
+                                btnTambahAnak.visibility = View.VISIBLE
+                            }
+                        }
+                    }
+                }
+                else{
+                    Toast.makeText(activity, "Data anak tidak ditemukan", Toast.LENGTH_SHORT).show()
+                }
 
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
+        })
     }
 
 }

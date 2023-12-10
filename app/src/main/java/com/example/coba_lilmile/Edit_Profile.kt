@@ -56,7 +56,7 @@ class Edit_Profile : AppCompatActivity() {
                     "nama" to et_nama_profile.text.toString(),
                     "username" to et_username_profile.text.toString(),
                     "email" to et_email_profile.text.toString(),
-                    "noHp" to et_nohp_profile.text.toString()
+                    "notelp" to et_nohp_profile.text.toString()
                 )
 //
                 databaseReference.child("${preference.getValues("id")}").updateChildren(updateData).addOnCanceledListener {

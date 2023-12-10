@@ -17,6 +17,7 @@ import com.anychart.core.cartesian.series.Area
 import com.anychart.core.cartesian.series.Line
 import com.anychart.data.Set
 import com.anychart.enums.MarkerType
+import com.example.coba_lilmile.util.PreferenceHelper
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -39,6 +40,8 @@ class ViewChart : AppCompatActivity(){
 
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
+
+    private lateinit var preference: PreferenceHelper
 
     private lateinit var btnMenu : FloatingActionButton
     private lateinit var btnAdd : FloatingActionButton
@@ -63,6 +66,7 @@ class ViewChart : AppCompatActivity(){
         val viewBeratBadan = bundle!!.getBoolean("viewBeratBadan")
         val viewLingkarKepala = bundle!!.getBoolean("viewLingkarKepala")
 
+        preference = PreferenceHelper(this)
 
         btnMenu = findViewById(R.id.btnMenu)
         btnAdd = findViewById(R.id.btnTambahData)
@@ -81,6 +85,7 @@ class ViewChart : AppCompatActivity(){
             historyData()
         }
 
+        val id_akun = preference.getValues("id")
 
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.reference.child("pertumbuhan_anak")
@@ -224,7 +229,6 @@ class ViewChart : AppCompatActivity(){
         series2.markers().zIndex(100.0)
 
 
-
         databaseReference.orderByChild("umur_tumbuh").addValueEventListener(object : ValueEventListener{
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -242,13 +246,21 @@ class ViewChart : AppCompatActivity(){
                                 Toast.LENGTH_LONG
                             ).show()*/
 
-                            if(viewBeratBadan == true){
-                                indikator = "Berat"
-                                seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.berat_tumbuh)
+                            if(dataAnak.idAkun.equals(id_akun)){
+                                if(viewBeratBadan == true){
+                                    indikator = "Berat"
+                                    seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.berat_tumbuh)
+                                }
+                                else if(viewTinggiBadan == true){
+                                    indikator = "Tinggi"
+                                    seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.tinggi_tumbuh)
+                                }
                             }
-                            else if(viewTinggiBadan == true){
-                                indikator = "Tinggi"
-                                seriesData += ValueDataEntry(dataAnak.umur_tumbuh, dataAnak.tinggi_tumbuh)
+                            else{
+                                Toast.makeText(
+                                    this@ViewChart, "Data tidak ditemukan",
+                                    Toast.LENGTH_LONG
+                                ).show()
                             }
 
 
@@ -330,12 +342,15 @@ class ViewChart : AppCompatActivity(){
 
                 if(sumData<=sumBenchmark1 && sumData>=sumBenchmark2){
                     textHasilInterp.setText("Normal")
-                    textHasil.setText("$indikator anak normal. Pantau secara berkala, Ideal: $sumBenchmark1, Tidak Ideal: $sumBenchmark2," +
-                            "Data: $sumData")
+                    textHasil.setText("$indikator anak normal. Pantau secara berkala.")
+                }
+                else if(sumData>sumBenchmark1 && sumData<sumBenchmark2){
+                    textHasilInterp.setText("Tidak Normal")
+                    textHasil.setText("$indikator anak tidak normal. Konsultasikan ke dokter terdekat.")
                 }
                 else{
-                    textHasilInterp.setText("Tidak Normal")
-                    textHasil.setText("$indikator anak tidak normal, $sumBenchmark1, $sumBenchmark2, $sumData")
+                    textHasilInterp.setText("—")
+                    textHasil.setText("—")
                 }
 
             }
