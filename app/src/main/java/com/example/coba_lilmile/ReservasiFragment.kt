@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +19,7 @@ import android.view.ViewGroup
 class ReservasiFragment : Fragment() {
     // TODO: Rename and change types of parameters
 
+    private lateinit var b_ismangoen: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,14 +38,20 @@ class ReservasiFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        b_ismangoen = requireView().findViewById(R.id.b_ismangoen)
+
+        b_ismangoen.setOnClickListener{
+            val intent = Intent(requireActivity().applicationContext, ReservasiActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
 
-    fun fpindah(view: View) {
+    /*fun fpindah() {
         val intent = Intent(requireActivity().applicationContext, ReservasiActivity::class.java)
         startActivity(intent)
-    }
+    }*/
 
 
 

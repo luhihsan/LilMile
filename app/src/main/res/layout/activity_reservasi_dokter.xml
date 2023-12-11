@@ -13,21 +13,22 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/appbar_background">
+            android:layout_height="63dp"
+            android:background="@drawable/bg_top_profil">
+
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:navigationIcon="@drawable/arrow_back_"
                 tools:layout_editor_absoluteX="6dp"
-                tools:layout_editor_absoluteY="-2dp">
-            </com.google.android.material.appbar.MaterialToolbar>
+                tools:layout_editor_absoluteY="-2dp"></com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             android:fillViewport="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -41,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="48dp"
                     android:text="Nama Lengkap"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <EditText
                     android:id="@+id/edit_namaLengkap"
@@ -135,9 +136,9 @@
                     android:layout_width="343dp"
                     android:layout_height="56dp"
                     android:layout_marginTop="3dp"
-                    android:hint="dd_mm_yy"
                     android:clickable="false"
                     android:focusable="false"
+                    android:hint="dd_mm_yy"
                     android:paddingStart="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -148,13 +149,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
+                    android:onClick="fSetTanggal"
                     app:layout_constraintEnd_toEndOf="@+id/edit_Tanggal"
                     app:layout_constraintHorizontal_bias="0.959"
                     app:layout_constraintStart_toStartOf="@+id/edit_Tanggal"
                     app:layout_constraintTop_toTopOf="@+id/edit_Tanggal"
                     app:srcCompat="@drawable/calendar_icon"
-                    tools:ignore="MissingConstraints"
-                    android:onClick="fSetTanggal"/>
+                    tools:ignore="MissingConstraints" />
 
                 <Button
                     android:id="@+id/b_konfirmasi"
@@ -162,19 +163,13 @@
                     android:layout_height="56dp"
                     android:layout_marginTop="25dp"
                     android:backgroundTint="#4287f5"
+                    android:onClick="fReservasi"
                     android:text="Konfirmasi"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_Tanggal"
-                    android:onClick="fReservasi"/>
+                    app:layout_constraintTop_toBottomOf="@+id/edit_Tanggal" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:menu="@menu/bottom_nav_menu" >
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

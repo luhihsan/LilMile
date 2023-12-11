@@ -16,6 +16,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Coba_LilMile"
+rootProject.name = "LilMile"
 include(":app")
  
