@@ -134,10 +134,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun gagalRegis(){
-
-    }
-
     private fun suksesRegis(pengguna: Pengguna){
 
         setDataToDatabase(pengguna)
