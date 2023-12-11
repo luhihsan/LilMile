@@ -383,6 +383,24 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:src="@drawable/carousel2" />
+
+                    <ImageView
+                        android:id="@+id/imageCarousel3"
+                        android:layout_width="274dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:src="@drawable/umur_emas" />
+
+                    <ImageView
+                        android:id="@+id/imageCarousel4"
+                        android:layout_width="274dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:src="@drawable/brokoli_carousel" />
+
+
                 </LinearLayout>
             </HorizontalScrollView>
 

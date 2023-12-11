@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".artikel2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@color/mainBlue"
+            android:gravity="center"
+            android:shadowColor="@color/buttonColor"
+            android:text="Artikel Untuk Bunda"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="6 Cara Menjaga Kesehatan Tubuh Anak"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_width="260dp"
+            android:layout_height="250dp"
+            android:src="@drawable/jaga_kesehatan"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="11 Desember 2023"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ditulis oleh Galuh Ihsan / dr. Rista Melinda, Sp.A (Editor)"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "Orang tua memainkan peran sentral dalam memastikan kesehatan dan kebahagiaan anak, terutama di tengah tantangan pandemi. Untuk menjaga kesehatan anak, berikut langkah-langkah yang dapat diambil dengan memberikan perhatian khusus pada aspek-aspek tertentu:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "1. Cuci Tangan dengan Rajin: Tanamkan kebiasaan mencuci tangan pada anak, terutama setelah bermain di luar atau sebelum makan. Mencuci tangan secara teratur adalah langkah pertama yang efektif dalam mencegah penyebaran penyakit."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="gravity"
+            android:text= "2. Peningkatan Kekebalan Tubuh: Dorong gaya hidup sehat dengan mengajak anak untuk berolahraga secara teratur, memberikan makanan bergizi, dan menjaga pola tidur yang baik. Aktivitas fisik, nutrisi yang seimbang, dan istirahat yang cukup dapat memberikan kontribusi besar pada sistem kekebalan tubuh anak."
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="gravity"
+            android:text= "3. Praktik Hidup Bersih: Ajarkan anak kebersihan diri dengan mengajaknya untuk menjaga kebersihan tubuh, seperti menggosok gigi secara teratur. Hindari kebiasaan berbagi barang pribadi seperti alat makan atau handuk untuk mencegah penularan penyakit."
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="gravity"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:text="4. Imunisasi Rutin: Pastikan anak mendapatkan imunisasi sesuai jadwal yang ditentukan. Imunisasi merupakan langkah preventif yang penting untuk melindungi anak dari penyakit yang dapat membahayakan kesehatannya."
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="gravity"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:text= "5. Pemberian Makanan Bergizi: Berikan makanan sehat dengan mencakup berbagai nutrisi penting. Hindari makanan cepat saji dan lebih sering mengolah makanan di rumah untuk memastikan anak mendapatkan asupan nutrisi yang diperlukan untuk pertumbuhan dan perkembangannya."
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textAlignment="gravity"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:text="6. Aktivitas Fisik dan Batasi Gadget: Ajak anak untuk bermain dan beraktivitas fisik secara teratur. Penting juga membatasi waktu penggunaan gadget agar anak lebih terlibat dalam kegiatan yang merangsang perkembangan fisik dan mentalnya."
+            />
+
+    </LinearLayout>
+
+</ScrollView>

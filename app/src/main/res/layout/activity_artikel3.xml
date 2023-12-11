@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".artikel3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@color/mainBlue"
+            android:gravity="center"
+            android:shadowColor="@color/buttonColor"
+            android:text="Artikel Untuk Bunda"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Optimalkan Tumbuh Kembang"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Anak di Periode Emas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_width="260dp"
+            android:layout_height="250dp"
+            android:src="@drawable/umur_emas"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10 Desember 2023"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ditulis oleh Galuh Ihsan / dr. Maretta Endah, Sp.A (Editor)"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "Tumbuh kembang anak merupakan fokus utama orangtua, terutama pada periode emas usia 0-3 tahun. Penting bagi orangtua untuk memantau perkembangan fisik dan emosional anak selama periode ini. Stimulasi positif secara rutin diperlukan untuk mendukung perkembangan otak yang cepat pada masa ini."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "Faktor lingkungan juga berpengaruh pada tumbuh kembang anak, dan hubungan positif dengan orangtua menjadi kunci. Permainan yang menyenangkan dapat menjadi metode pembelajaran yang efektif, sambil tetap memberikan anak kesempatan untuk bereksplorasi dan belajar. Interaksi langsung antara orangtua dan anak, serta waktu bersama yang berkualitas, membantu meningkatkan kemampuan sosial dan komunikasi anak."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "Pemenuhan kebutuhan gizi, termasuk pemberian makanan pendamping ASI dan MPASI yang sesuai, sangat penting. Nutrisi yang adekuat, termasuk protein dan kalsium, mendukung pertumbuhan fisik dan perkembangan tulang anak. Orangtua juga disarankan untuk tetap tenang dan menggunakan sumber medis seperti aplikasi Halodoc untuk berkonsultasi mengenai kesehatan anak."
+            android:textSize="16sp" />
+
+
+
+    </LinearLayout>
+
+</ScrollView>

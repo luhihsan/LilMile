@@ -60,6 +60,10 @@ class HomeFragment : Fragment() {
     private lateinit var btnTambahAnak: FloatingActionButton
 
     private lateinit var imageCarousel1: ImageView
+    private lateinit var imageCarousel2: ImageView
+    private lateinit var imageCarousel3: ImageView
+    private lateinit var imageCarousel4: ImageView
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,6 +103,9 @@ class HomeFragment : Fragment() {
         preference = PreferenceHelper(requireActivity().applicationContext)
 
         imageCarousel1 = requireView().findViewById(R.id.imageCarousel1)
+        imageCarousel2 = requireView().findViewById(R.id.imageCarousel2)
+        imageCarousel3 = requireView().findViewById(R.id.imageCarousel3)
+        imageCarousel4 = requireView().findViewById(R.id.imageCarousel4)
 
         var hitung: Int = 0
         var usiaTemp:String
@@ -135,6 +142,21 @@ class HomeFragment : Fragment() {
         imageCarousel1.setOnClickListener{
             val goArtikel = Intent(requireActivity().applicationContext, Artikel::class.java)
             startActivity(goArtikel)
+        }
+
+        imageCarousel2.setOnClickListener{
+            val goArtikel2 = Intent(requireActivity().applicationContext, artikel2::class.java)
+            startActivity(goArtikel2)
+        }
+
+        imageCarousel3.setOnClickListener{
+            val goArtikel3 = Intent(requireActivity().applicationContext, artikel3::class.java)
+            startActivity(goArtikel3)
+        }
+
+        imageCarousel4.setOnClickListener{
+            val goArtikel4 = Intent(requireActivity().applicationContext, artikel4::class.java)
+            startActivity(goArtikel4)
         }
 
 

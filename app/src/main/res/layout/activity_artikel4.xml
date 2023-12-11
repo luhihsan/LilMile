@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".artikel4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@color/mainBlue"
+            android:gravity="center"
+            android:shadowColor="@color/buttonColor"
+            android:text="Artikel Untuk Bunda"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ketahui Manfaat Brokoli"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bagi Keseharan Anak"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_width="260dp"
+            android:layout_height="250dp"
+            android:src="@drawable/brokoli"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12 Desember 2023"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ditulis oleh Galuh Ihsan / dr. Hasna Nafiah, Sp.A (Editor)"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "Brokoli, sayuran berwarna hijau, memiliki kandungan nutrisi yang sangat penting untuk mendukung kesehatan anak. Salah satu manfaat utamanya adalah kemampuannya dalam mencegah risiko penyakit kanker dan meningkatkan kekebalan tubuh. Dengan memberikan brokoli sebagai bagian dari pola makan harian anak, orang tua dapat memberikan perlindungan tambahan terhadap ancaman penyakit serius."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "Tidak hanya itu, brokoli juga memiliki kandungan vitamin A yang tinggi, mendukung kesehatan mata anak. Kandungan asam lemak omega 3 di dalamnya memberikan kontribusi positif pada perkembangan otak anak. Dengan memberikan nutrisi ini sejak dini, orang tua dapat memastikan bahwa anak memiliki fondasi kesehatan yang baik, terutama pada aspek penglihatan dan kemampuan berpikir."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "Selain itu, kandungan kalsium dalam brokoli memiliki peran penting dalam memperkuat struktur tulang dan gigi anak. Ini menjadi faktor krusial, terutama mengingat anak masih dalam fase pertumbuhan. Sementara itu, serat yang tinggi dalam brokoli mendukung kesehatan sistem pencernaan anak, membantu menjaga kelancaran proses metabolisme tubuh."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "Brokoli juga memberikan manfaat bagi kesehatan kulit anak. Senyawa glucoraphanin dan vitamin E di dalamnya membantu memperbaiki dan menjaga kesehatan kulit. Dengan memberikan variasi makanan yang kaya nutrisi seperti brokoli, orang tua tidak hanya menjaga kesehatan fisik anak tetapi juga merawat kulitnya secara alami."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="gravity"
+            android:text= "Dengan menyajikan brokoli secara kreatif dalam menu harian anak, orang tua dapat memberikan dampak positif yang holistik pada pertumbuhan dan kesehatan anak mereka. Penting untuk menciptakan kebiasaan makan sehat sejak dini dan memantau respons anak terhadap perubahan ini."
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</ScrollView>
