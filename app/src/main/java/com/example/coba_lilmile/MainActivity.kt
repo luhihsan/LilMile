@@ -8,7 +8,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.coba_lilmile.util.DataPengguna
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.util.UUID
 
 
@@ -18,6 +23,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
     private lateinit var btnSubmit: Button
     private lateinit var btnPindahLogin: Button
+
+    private lateinit var firebaseDatabase: FirebaseDatabase
+    private lateinit var databaseReference: DatabaseReference
 
     private val db by lazy { FirebaseDatabase.getInstance().reference }
 
@@ -31,6 +39,9 @@ class MainActivity : AppCompatActivity() {
         btnSubmit = findViewById(R.id.btnRegistrasi)
         btnPindahLogin = findViewById(R.id.btnPindahLogin)
 
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase.reference.child("user")
+
 
         btnSubmit.setOnClickListener {
             val username = etUsername.text.toString()
@@ -41,12 +52,8 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Setiap Kolom Informasi Wajib Di isi", Toast.LENGTH_SHORT).show()
             } else {
                 val pengguna = getDataPengguna(username, email, password)
-                setDataToDatabase(pengguna)
 
-                // Logika untuk melakukan register
-                // Misalnya, menyimpan email dan password ke database Anda
-                val intent = Intent(this, Registrasi_anak ::class.java)
-                startActivity(intent)
+                loadCheckDB(email, pengguna)
             }
         }
 
@@ -93,6 +100,49 @@ class MainActivity : AppCompatActivity() {
         imm.hideSoftInputFromWindow(etUsername.windowToken, 0)
         imm.hideSoftInputFromWindow(etEmail.windowToken, 0)
         imm.hideSoftInputFromWindow(etPassword.windowToken, 0)
+    }
+
+    private fun loadCheckDB(email: String, pengguna: Pengguna){
+
+        databaseReference.orderByChild("email").equalTo(email).addValueEventListener(object :
+            ValueEventListener {
+            var regis:Boolean = false
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if(!dataSnapshot.exists()){
+                    suksesRegis(pengguna)
+                    regis = true
+                }
+
+                if(dataSnapshot.exists()){
+                    if(regis == false){
+                        Toast.makeText(
+                            this@MainActivity, "Email sudah digunakan!",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Toast.makeText(
+                    this@MainActivity, databaseError.message,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+
+    }
+
+    private fun gagalRegis(){
+
+    }
+
+    private fun suksesRegis(pengguna: Pengguna){
+
+        setDataToDatabase(pengguna)
+        val intent = Intent(this@MainActivity, Login ::class.java)
+        startActivity(intent)
     }
 }
 
