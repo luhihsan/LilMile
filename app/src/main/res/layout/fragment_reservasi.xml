@@ -218,7 +218,6 @@
                                     android:layout_marginRight="10dp"
                                     android:layout_marginBottom="5dp"
                                     android:backgroundTint="#4287f5"
-                                    android:onClick="fpindah"
                                     android:text="Reservasi" />
                             </RelativeLayout>
                         </androidx.cardview.widget.CardView>

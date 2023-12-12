@@ -8,6 +8,6 @@ import android.view.View
 class Tambah_Alamat : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        setContentView(R.layout.activity_alamat)
     }
 }

@@ -23,7 +23,7 @@ class Profile : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        /*setContentView(R.layout.activity_profile)
 
         preference = PreferenceHelper(this)
 
@@ -36,7 +36,7 @@ class Profile : AppCompatActivity() {
 
         bottomNavigation.selectedItemId = R.id.menu_3
 
-        findViewById<BottomNavigationView>(R.id.bottomNavigationView).itemActiveIndicatorColor = getColorStateList(R.color.mainBlue)
+        findViewById<BottomNavigationView>(R.id.bottomNavigationView).itemActiveIndicatorColor = getColorStateList(R.color.mainBlue)*/
 
 
     }

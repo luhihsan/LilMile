@@ -52,7 +52,8 @@
                     android:layout_marginStart="48dp"
                     android:layout_marginTop="1dp"
                     android:text="Provinsi"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
                     android:id="@+id/edtProvinsi"

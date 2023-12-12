@@ -20,6 +20,8 @@ class ReservasiFragment : Fragment() {
     // TODO: Rename and change types of parameters
 
     private lateinit var b_ismangoen: Button
+    private lateinit var b_rachmi: Button
+    private lateinit var b_medica: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +41,21 @@ class ReservasiFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         b_ismangoen = requireView().findViewById(R.id.b_ismangoen)
+        b_rachmi = requireView().findViewById(R.id.b_rachmi)
+        b_medica = requireView().findViewById(R.id.b_medica)
 
         b_ismangoen.setOnClickListener{
             val intent = Intent(requireActivity().applicationContext, ReservasiActivity::class.java)
             startActivity(intent)
         }
-
+        b_rachmi.setOnClickListener{
+            val intent = Intent(requireActivity().applicationContext, ReservasiActivity::class.java)
+            startActivity(intent)
+        }
+        b_medica.setOnClickListener{
+            val intent = Intent(requireActivity().applicationContext, ReservasiActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
