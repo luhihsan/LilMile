@@ -2,7 +2,7 @@
 **Nama Kelompok: Peduli Lindungi**  
 **Nama Anggota:**  
 1) Ihwan Dwi Rizky Fitriawan - 21523249  
-2)  
+2) Muhammad Luqman Hidayat - 21523064 
 3)  
 4)  
 5)  
@@ -22,5 +22,10 @@ Anggota 1:
 - QA Testing
   
 Anggota 2:  
+- Reservasi dokter
+- Profil pengguna
+- Alamat pengguna
+- Revisi tampilan login
+- Revisi tampilan tambah data anak
   
 Contact Person: Ketua (081226567654)
