@@ -1,15 +1,15 @@
-Nama Aplikasi: LilMile
-Nama Kelompok: Peduli Lindungi
-Nama Anggota:
-1) Ihwan Dwi Rizky Fitriawan - 21523249
-2)
-3)
-4)
-5)
-6)
-
-Job Desc:
-Anggota 1:
+Nama Aplikasi: LilMile  
+Nama Kelompok: Peduli Lindungi  
+Nama Anggota:  
+1) Ihwan Dwi Rizky Fitriawan - 21523249  
+2)  
+3)  
+4)  
+5)  
+6)  
+  
+Job Desc:  
+Anggota 1:  
  - Membuat Homepage
  - Merevisi semua view page
  - Membuat chart beserta interpretasi
@@ -19,8 +19,7 @@ Anggota 1:
  - Fix Regis & Login logic
  - Merevisi semua view page
  - Bug Fixing
- - QA Testing
-
+ - QA Testing  
 Anggota 2:
  -
  -
