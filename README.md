@@ -9,6 +9,7 @@ Nama Anggota:
 6)  
   
 Job Desc:  
+
 Anggota 1:  
  - Membuat Homepage
  - Merevisi semua view page
@@ -19,7 +20,7 @@ Anggota 1:
  - Fix Regis & Login logic
  - Merevisi semua view page
  - Bug Fixing
- - QA Testing  
+ - QA Testing <br>
 Anggota 2:
  -
  -
