@@ -4,7 +4,7 @@
 1) Ihwan Dwi Rizky Fitriawan - 21523249  
 2) Muhammad Luqman Hidayat - 21523064 
 3) Galuh Ihsan Nurkholis - 21523128
-4)  
+4) Muhammad Ivander Ramusta - 20523181
 5)  
 6)  
   
@@ -40,5 +40,11 @@ Anggota 3 :
 - Membuat tampilan Welcome Page
 - Membuat tampilan Halaman Artikel Untuk Bunda
 - QA dan Bug Fix
+
+
+Anggota 4 :
+- Membuat view Homepage
+- Logout
+  
   
 Contact Person: Ketua (081226567654)
