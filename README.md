@@ -5,7 +5,7 @@
 2) Muhammad Luqman Hidayat - 21523064 
 3) Galuh Ihsan Nurkholis - 21523128
 4) Muhammad Ivander Ramusta - 20523181
-5)  
+5) Sausan Trisdiatin - 21523052
 6)  
   
 **Job Desc:**  
@@ -45,6 +45,12 @@ Anggota 3 :
 Anggota 4 :
 - Membuat view Homepage
 - Logout
+
+Anggota 5:
+- Membuat halaman Profil Anak
+- Mendesain prototype pada Figma
+- Membuat poster
+- QA Testing
   
   
 Contact Person: Ketua (081226567654)
