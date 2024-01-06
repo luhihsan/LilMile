@@ -6,7 +6,7 @@
 3) Galuh Ihsan Nurkholis - 21523128
 4) Muhammad Ivander Ramusta - 20523181
 5) Sausan Trisdiatin - 21523052
-6)  
+6) Syifa Aliya Putri - 21523199
   
 **Job Desc:**  
 Anggota 1:  
@@ -51,6 +51,12 @@ Anggota 5:
 - Mendesain prototype pada Figma
 - Membuat poster
 - QA Testing
+
+Anggota 6:
+- Desain prototype pada Figma
+- Edit profil anak
+- QA Testing
+- Poster
   
   
 Contact Person: Ketua (081226567654)
