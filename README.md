@@ -3,7 +3,7 @@
 **Nama Anggota:**  
 1) Ihwan Dwi Rizky Fitriawan - 21523249  
 2) Muhammad Luqman Hidayat - 21523064 
-3)  
+3) Galuh Ihsan Nurkholis - 21523128
 4)  
 5)  
 6)  
@@ -27,5 +27,18 @@ Anggota 2:
 - Alamat pengguna
 - Revisi tampilan login
 - Revisi tampilan tambah data anak
+
+Anggota 3 : 
+- Membuat tampilan dan fungsi halaman registrasi
+- Membuat tampilan dan fungsi halaman login
+- Integrasi ke Database
+- Edit Data Pertumbuhan
+- Hapus Data Pertumbuhan
+- Membuat tampilan dan fungsi halaman Update Data Pertumbuhan
+- Simpan Data Registrasi ke Database
+- Simpan Data Update Pertumbuhan ke Database
+- Membuat tampilan Welcome Page
+- Membuat tampilan Halaman Artikel Untuk Bunda
+- QA dan Bug Fix
   
 Contact Person: Ketua (081226567654)
